@@ -1,0 +1,136 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Ricerca Attività Offerte</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+        <ion-tab-button class="tab-selected" [routerLink]="'/ricerca-attivita'">
+          <ion-label>Offerte</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/ricerca-attivita-richieste'">
+          <ion-label>Richieste</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+  <div  class="ion-text-center">
+    <p>
+    In questa pagina puoi cercare e richiedere un servizio offerto o proposto da un utente volontario.
+    </p>
+  </div>
+  
+
+
+  <ion-list lines="none">
+
+    <ion-list-header class="header">
+      <ion-label>Risultati</ion-label>
+    </ion-list-header>
+    
+  
+  <ion-item [routerLink]="'/dettagli-ricerca'">
+      <ion-avatar slot="start">
+          <img src="/assets/avatar10.png">
+      </ion-avatar>
+      <ion-label>
+       <b>Filippo Neri</b>
+     <div>
+        <img src="/assets/5star.png" style="height:20px;">
+     </div>
+       <p>Infermiere</p>
+           <p>Costo:<ion-icon slot="start" color="medium" name="remove-circle"></ion-icon>2h</p>		
+   </ion-label>
+    </ion-item>
+  
+  
+  
+  <ion-item [routerLink]="'/dettagli-ricerca'">
+      <ion-avatar slot="start">
+          <img src="/assets/avatar11.png">
+      </ion-avatar>
+      <ion-label>
+       <b>Anna Coppola</b>
+     <div>
+        <img src="/assets/4star.png" style="height:20px;">
+     </div>
+       <p>Infermiere</p>
+           <p>Costo:<ion-icon slot="start" color="medium" name="remove-circle"></ion-icon>2h</p>		
+   </ion-label>
+    </ion-item>
+
+  
+  <ion-item [routerLink]="'/dettagli-ricerca'">
+      <ion-avatar slot="start">
+          <img src="/assets/avatar12.png">
+      </ion-avatar>
+      <ion-label>
+       <b>Roberto Priscoli</b>
+     <div>
+        <img src="/assets/4star.png" style="height:20px;">
+     </div>
+       <p>Infermiere</p>
+           <p>Costo:<ion-icon slot="start" color="medium" name="remove-circle"></ion-icon>1h 30m</p>		
+   </ion-label>
+    </ion-item>
+
+  
+  <ion-item [routerLink]="'/dettagli-ricerca'">
+      <ion-avatar slot="start">
+          <img src="/assets/avatar13.png">
+      </ion-avatar>
+      <ion-label>
+       <b>Carla Ippolito</b>
+     <div>
+        <img src="/assets/3star.png" style="height:20px;">
+     </div>
+       <p>Infermiere</p>
+           <p>Costo:<ion-icon slot="start" color="medium" name="remove-circle"></ion-icon>1h 30m</p>		
+   </ion-label>
+    </ion-item>
+
+  
+  
+  </ion-list>
+</ion-content>
+
+  
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+        <ion-tab-button [routerLink]="'/home'">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+         <!-- <ion-badge>6</ion-badge> -->
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/attivita-new-offerte'">
+          <ion-icon name="construct"></ion-icon>
+          <ion-label>Attività</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/ricerca-attivita'">
+          <ion-icon name="search"></ion-icon>
+          <ion-label>Ricerca</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/profilo-anagrafica'">
+          <ion-icon name="person"></ion-icon>
+          <ion-label>Profilo</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

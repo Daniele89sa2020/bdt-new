@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Crea Attività</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+        <ion-tab-button [routerLink]="'/attivita-new-offerte'">
+          <ion-label>Offerte</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/attivita-new-richieste'">
+          <ion-label>Richieste</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button class="tab-selected" [routerLink]="'/attivita-new-crea'">
+          <ion-label>Crea</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+
+  <form #form="ngForm" (ngSubmit)="ionCreaAttivita(form.value,{{currentUser.id}})">
+    <ion-grid>
+      <ion-row  justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          
+          <div padding>
+           
+            <ion-label>
+              <b>Nome Attività</b>
+            </ion-label>
+            <ion-item>
+              <ion-input name="tel" type="text" placeholder="" ngModel required></ion-input>
+            </ion-item>
+            <br><br>
+
+
+            <ion-label>
+              <b>Tipo Attività</b>
+            </ion-label>
+            <ion-toolbar>
+              <ion-segment name="tipo" (ionChange)="segmentChanged($event)" value="o">
+                <ion-segment-button value="o" selected (Click)="selectTipe('o')">Offerta
+                </ion-segment-button>
+                <ion-segment-button value="r" (Click)="selectTipe('r')">Richiesta
+                </ion-segment-button>
+              </ion-segment>
+            </ion-toolbar>
+            <ion-input id="tipo" name="tipo" type="hidden" value="o" ngModel></ion-input>
+            <br><br>
+            
+
+
+            <ion-label>
+              <b>Descrizione</b>
+            </ion-label>
+            <ion-item>
+              <ion-input name="tel" type="text" placeholder="" ngModel required></ion-input>
+            </ion-item>
+            <br><br>
+
+            
+            <ion-label>
+              <b>Durata</b>
+            </ion-label>
+            <ion-item>
+              <ion-input name="tel" type="text" placeholder="" ngModel required></ion-input>
+            </ion-item>
+            <br><br>
+
+            
+            <ion-label>
+              <b>Luogo</b>
+            </ion-label>
+            <ion-item>
+              <ion-input name="tel" type="text" placeholder="" ngModel required></ion-input>
+            </ion-item>
+            <br><br>
+
+
+            <ion-button  size="default" type="submit" expand="block">Crea</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
+
+
+  
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+        <ion-tab-button [routerLink]="'/home'">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+         <!-- <ion-badge>6</ion-badge> -->
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/attivita-new-offerte'">
+          <ion-icon name="construct"></ion-icon>
+          <ion-label>Attività</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/ricerca-attivita'">
+          <ion-icon name="search"></ion-icon>
+          <ion-label>Ricerca</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/profilo-anagrafica'">
+          <ion-icon name="person"></ion-icon>
+          <ion-label>Profilo</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

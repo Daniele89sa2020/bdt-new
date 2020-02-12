@@ -1,0 +1,138 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Premi Prodotti</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button class="tab-selected" [routerLink]="'/premi-prodotti'">
+          <ion-label>Prodotti</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/premi-partner'">
+          <ion-label>Partner</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+
+<br>
+  
+  <ion-list lines="none">
+        <ion-list-header class="header">
+          <ion-label>Elenco Prodotti</ion-label>
+        </ion-list-header>
+        
+      <!--PRODOTTO 1-->
+      <ion-item [routerLink]="'/dettagli-prodotto'">
+          <ion-avatar slot="start">
+              <img src="/assets/prod1.jpg">
+          </ion-avatar>
+          <ion-label>
+           <b>Scarpe Nike AirMax</b>
+           <p>Partner: Foot Looker</p>
+               <p>Costo:<ion-icon slot="start" color="medium" name="remove-circle"></ion-icon>100 h</p> 	
+          </ion-label>
+        </ion-item>
+        
+       <!--PRODOTTO 2-->     
+        <ion-item [routerLink]="'/dettagli-prodotto'">
+            <ion-avatar slot="start">
+                <img src="/assets/prod2.jpg">
+            </ion-avatar>
+            <ion-label>
+             <b>Cassa Bose Bluetooth</b>
+             <p>Partner: Expert</p>
+                 <p>Costo:<ion-icon slot="start" color="medium" name="remove-circle"></ion-icon>140 h</p> 	
+            </ion-label>
+          </ion-item>
+        
+        <!--PRODOTTO 3-->
+          <ion-item [routerLink]="'/dettagli-prodotto'">
+              <ion-avatar slot="start">
+                  <img src="/assets/prod3.jpg">
+              </ion-avatar>
+              <ion-label>
+               <b>Giubbino Termico da Neve</b>
+               <p>Partner: Decathlon</p>
+                   <p>Costo:<ion-icon slot="start" color="medium" name="remove-circle"></ion-icon>65 h</p> 	
+              </ion-label>
+            </ion-item>
+        
+         <!--PRODOTTO 4-->
+            <ion-item [routerLink]="'/dettagli-prodotto'">
+                <ion-avatar slot="start">
+                    <img src="/assets/prod4.jpg">
+                </ion-avatar>
+                <ion-label>
+                 <b>Borsone Palestra PUMA</b>
+                 <p>Partner: Cisalfa</p>
+                     <p>Costo:<ion-icon slot="start" color="medium" name="remove-circle"></ion-icon>40 h</p> 	
+                </ion-label>
+              </ion-item>
+        
+            <!--PRODOTTO 5-->
+              <ion-item [routerLink]="'/dettagli-prodotto'">
+                  <ion-avatar slot="start">
+                      <img src="/assets/prod5.jpg">
+                  </ion-avatar>
+                  <ion-label>
+                   <b>Cuffie Bluetooth Jbl</b>
+                   <p>Partner: MediaWorld</p>
+                       <p>Costo:<ion-icon slot="start" color="medium" name="remove-circle"></ion-icon>35 h</p> 	
+                  </ion-label>
+                </ion-item>
+        
+            <!--PRODOTTO 6-->
+                <ion-item [routerLink]="'/dettagli-prodotto'">
+                    <ion-avatar slot="start">
+                        <img src="/assets/prod6.jpg">
+                    </ion-avatar>
+                    <ion-label>
+                     <b>TV Samsung Oled 55'' 8k</b>
+                     <p>Partner: Unieuro</p>
+                         <p>Costo:<ion-icon slot="start" color="medium" name="remove-circle"></ion-icon>190 h</p> 	
+                    </ion-label>
+                  </ion-item>
+ 
+      
+    </ion-list>
+</ion-content>
+
+  
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+        <ion-tab-button [routerLink]="'/home'">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+         <!-- <ion-badge>6</ion-badge> -->
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/attivita-new-offerte'">
+          <ion-icon name="construct"></ion-icon>
+          <ion-label>Attività</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/ricerca-attivita'">
+          <ion-icon name="search"></ion-icon>
+          <ion-label>Ricerca</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/profilo-anagrafica'">
+          <ion-icon name="person"></ion-icon>
+          <ion-label>Profilo</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

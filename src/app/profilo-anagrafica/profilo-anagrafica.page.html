@@ -1,0 +1,141 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profilo Anagrafica</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+        <ion-tab-button class="tab-selected" [routerLink]="'/profilo-anagrafica'">
+          <ion-label>Anagrafica</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button (click)="goToProfiloCurriculum()">
+          <ion-label>Curriculum</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+
+  <!--CARD PROFILO-->
+ <ion-card class="welcome-card">
+  <ion-card-header>
+
+    <ion-list lines="none" class="center">
+    <ion-item>
+        <!--<ion-avatar slot="start">-->
+            <img src="/assets/avatar4.png" style="width:80px;">
+        <!--</ion-avatar>-->
+        <ion-label>
+           <h2>{{currentUser.nome}} {{currentUser.cognome}}</h2>
+           <b>Feedback</b>
+           <img src="/assets/5star.png" style="height:16px;width:80px;">
+        </ion-label>
+    </ion-item>
+   
+    
+    <ion-button color="primary" [routerLink]="'/profilo-cambia-foto'" [routerDirection]="backward">
+      <ion-icon slot="icon-only" name="images"></ion-icon>
+    </ion-button>
+       
+    <ion-button color="primary" [routerLink]="'/feedback-ricevuti'" [routerDirection]="backward">
+      <ion-icon slot="icon-only" name="star"></ion-icon>
+    </ion-button>
+    
+    <ion-button color="primary" [routerLink]="'/profilo-modifica-password'" [routerDirection]="backward">
+      <ion-icon slot="icon-only" name="lock"></ion-icon> Cambia Password
+    </ion-button>
+
+    
+    <ion-label>
+      <h1>{{currentUser.saldo}}</h1>
+    </ion-label>
+
+    </ion-list>    
+  </ion-card-header>
+</ion-card>
+
+
+
+<!--DATI PROFILO-->
+<ion-list lines="none">
+  <ion-list-header class="header">
+    <ion-label>Dati Profilo</ion-label>
+    <ion-button [routerLink]="'/profilo-modifica-dati'">
+     <ion-icon name="create"> </ion-icon> Modifica 
+   </ion-button><br><br>
+  </ion-list-header>
+  
+
+<ion-item>
+    <ion-label>
+     <b>E-mail :</b> {{currentUser.email}} <br>
+     <b>Data di Nascita :</b> {{currentUser.data_nascita}}<br>
+     <b>Sesso :</b> {{currentUser.sesso}}<br>
+     <b>Telefono :</b>{{currentUser.telefono}}<br>
+    </ion-label>
+</ion-item>
+
+</ion-list>
+
+<!--DATI RESIDENZA-->
+<ion-list lines="none">
+  <ion-list-header class="header">
+    <ion-label>Dati Residenza</ion-label>
+    <ion-button [routerLink]="'/profilo-modifica-residenza'">
+     <ion-icon name="create"> </ion-icon> Modifica 
+   </ion-button><br><br>
+  </ion-list-header>
+  
+
+<ion-item>
+    <ion-label>
+     <b>Indirizzo :</b> {{currentUser.indirizzo}} <br>
+     <b>Città :</b> {{currentUser.citta}}<br>
+     <b>Provincia:</b> {{currentUser.provincia}} <br>
+     <b>CAP :</b> {{currentUser.cap}}<br>
+     <b>Stato/Regione :</b>{{currentUser.regione}}<br>
+     <b>Nazione :</b>{{currentUser.nazione}}<br>
+    </ion-label>
+</ion-item>
+
+</ion-list>
+
+</ion-content>
+
+  
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+        <ion-tab-button [routerLink]="'/home'" [routerDirection]="root">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+         <!-- <ion-badge>6</ion-badge> -->
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/attivita-new-offerte'" [routerDirection]="root">
+          <ion-icon name="construct"></ion-icon>
+          <ion-label>Attività</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/ricerca-attivita'" [routerDirection]="root">
+          <ion-icon name="search"></ion-icon>
+          <ion-label>Ricerca</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/profilo-anagrafica'" [routerDirection]="root">
+          <ion-icon name="person"></ion-icon>
+          <ion-label>Profilo</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

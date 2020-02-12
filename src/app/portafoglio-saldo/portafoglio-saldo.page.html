@@ -1,0 +1,140 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Portafoglio Saldo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button class="tab-selected" [routerLink]="'/portafoglio-saldo'">
+          <ion-label>Saldo</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/portafoglio-acquista'">
+          <ion-label>Acquista</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/portafoglio-trasferisci'">
+          <ion-label>Tresferisci</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+
+
+  
+  <ion-card class="welcome-card">
+      <ion-card-header>
+            <ion-item>
+              <ion-avatar slot="start">
+                 <img src="/assets/avatar4.png">
+              </ion-avatar>
+              <ion-label>Mario Rossi</ion-label>
+            </ion-item>
+      </ion-card-header>
+      
+    <ion-card-content>
+        <ion-card-title>Saldo: 2h 30m</ion-card-title>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-list lines="none">
+      <ion-list-header class="header">
+        <ion-label>Elenco Transazioni</ion-label>
+      </ion-list-header>
+      
+    
+    <ion-item [routerLink]="'/attivita-ricevute'">
+        <ion-avatar slot="start">
+            <img src="/assets/avatar1.png">
+        </ion-avatar>
+        <ion-label>
+         <b>Carmen Santoro</b>
+         <p>14/01/2020</p>
+         <p class="ricevuta">-1h 30m</p>  	
+        </ion-label>
+      </ion-item>
+
+      <ion-item [routerLink]="'/attivita-svolte'">
+          <ion-avatar slot="start">
+              <img src="/assets/avatar2.png">
+          </ion-avatar>
+          <ion-label>
+           <b>Vittorio Cibelli</b>
+           <p>09/01/2020</p>
+            <p class="offerta">+ 2h</p>  	
+          </ion-label>
+      </ion-item>
+    
+    <ion-item [routerLink]="'/attivita-ricevute'">
+        <ion-avatar slot="start">
+            <img src="/assets/avatar3.png">
+        </ion-avatar>
+        <ion-label>
+         <b>Homar Hassid</b>
+         <p>23/12/2019</p>
+          <h2 class="ricevuta">- 3h</h2>  	
+         </ion-label>
+      </ion-item>
+
+      <ion-item [routerLink]="'/attivita-svolte'">
+          <ion-avatar slot="start">
+              <img src="/assets/avatar6.png">
+          </ion-avatar>
+          <ion-label>
+           <b>Anna Tommasino</b>
+           <p>07/11/2019</p>
+            <p class="offerta">+ 2h</p>  	   
+          </ion-label>
+      </ion-item>
+
+    <ion-item [routerLink]="'/attivita-ricevute'">
+        <ion-avatar slot="start">
+            <img src="/assets/avatar5.png">
+        </ion-avatar>
+        <ion-label>
+         <b>Marco Galdi</b>
+         <p>06/11/2019</p>
+          <h3 class="ricevuta">- 2h</h3>  			
+        </ion-label> 
+    </ion-item>	  
+    
+    </ion-list>
+</ion-content>
+
+  
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+        <ion-tab-button [routerLink]="'/home'">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+         <!-- <ion-badge>6</ion-badge> -->
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/attivita-new-offerte'">
+          <ion-icon name="construct"></ion-icon>
+          <ion-label>Attività</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/ricerca-attivita'">
+          <ion-icon name="search"></ion-icon>
+          <ion-label>Ricerca</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/profilo-anagrafica'">
+          <ion-icon name="person"></ion-icon>
+          <ion-label>Profilo</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

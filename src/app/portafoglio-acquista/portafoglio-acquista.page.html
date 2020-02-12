@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Portafoglio Acquista</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button [routerLink]="'/portafoglio-saldo'">
+          <ion-label>Saldo</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button class="tab-selected" [routerLink]="'/portafoglio-acquista'">
+          <ion-label>Acquista</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/portafoglio-trasferisci'">
+          <ion-label>Tresferisci</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+ 
+
+  <ion-card class="welcome-card">
+      <img src="/assets/5h.png" alt="" />
+      <ion-card-header>
+       <ion-button expand="block">Acquista</ion-button>
+      </ion-card-header>
+    </ion-card>
+	
+	
+	<ion-card class="welcome-card">
+      <img src="/assets/10h.png" alt="" />
+      <ion-card-header>
+       <ion-button expand="block">Acquista</ion-button>
+      </ion-card-header>
+    </ion-card>
+	
+	
+	<ion-card class="welcome-card">
+      <img src="/assets/20h.png" alt="" />
+      <ion-card-header>
+       <ion-button expand="block">Acquista</ion-button>
+      </ion-card-header>
+    </ion-card>
+</ion-content>
+
+  
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+        <ion-tab-button [routerLink]="'/home'">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+         <!-- <ion-badge>6</ion-badge> -->
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/attivita-new-offerte'">
+          <ion-icon name="construct"></ion-icon>
+          <ion-label>Attività</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/ricerca-attivita'">
+          <ion-icon name="search"></ion-icon>
+          <ion-label>Ricerca</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/profilo-anagrafica'">
+          <ion-icon name="person"></ion-icon>
+          <ion-label>Profilo</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

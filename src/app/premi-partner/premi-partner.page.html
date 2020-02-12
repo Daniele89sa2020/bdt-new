@@ -1,0 +1,131 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Premi Partner</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button [routerLink]="'/premi-prodotti'">
+          <ion-label>Prodotti</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button class="tab-selected" [routerLink]="'/premi-partner'">
+          <ion-label>Partner</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+
+  <br>
+  
+  <ion-list lines="none">
+        <ion-list-header class="header">
+          <ion-label>Elenco Partner</ion-label>
+        </ion-list-header>
+        
+      <!--PARTNER 1-->
+      <ion-item [routerLink]="'/dettagli-partner'">
+          <ion-avatar slot="start">
+              <img src="/assets/partner1.jpg">
+          </ion-avatar>
+          <ion-label>
+           <b>Foot Looker</b>
+           <p>Più 150 prodotti...</p>	
+          </ion-label>
+        </ion-item>
+        
+       <!--PARTNER 2-->     
+       <ion-item [routerLink]="'/dettagli-partner'">
+        <ion-avatar slot="start">
+            <img src="/assets/partner2.jpg">
+        </ion-avatar>
+        <ion-label>
+         <b>Expert</b>
+         <p>Più 280 prodotti...</p>		
+        </ion-label>
+      </ion-item>
+    
+    <!--PARTNER 3-->
+      <ion-item [routerLink]="'/dettagli-partner'">
+          <ion-avatar slot="start">
+              <img src="/assets/partner3.jpg">
+          </ion-avatar>
+          <ion-label>
+           <b>Decathlon</b>
+           <p>Più 180 prodotti...</p>		 	
+          </ion-label>
+        </ion-item>
+    
+     <!--PARTNER 4-->
+        <ion-item [routerLink]="'/dettagli-partner'">
+            <ion-avatar slot="start">
+                <img src="/assets/partner4.jpg">
+            </ion-avatar>
+            <ion-label>
+             <b>Cisalfa</b>
+             <p>Più 500 prodotti...</p>			 	
+            </ion-label>
+          </ion-item>
+    
+        <!--PARTNER 5-->
+          <ion-item [routerLink]="'/dettagli-partner'">
+              <ion-avatar slot="start">
+                  <img src="/assets/partner5.jpg">
+              </ion-avatar>
+              <ion-label>
+               <b>MediaWorld</b>
+               <p>Più 100 prodotti...</p>	 
+              </ion-label>
+            </ion-item>
+    
+        <!--PARTNER 6-->
+            <ion-item [routerLink]="'/dettagli-partner'">
+                <ion-avatar slot="start">
+                    <img src="/assets/partner6.jpg">
+                </ion-avatar>
+                <ion-label>
+                 <b>Unieuro</b>
+                 <p>Più 160 prodotti...</p>	 
+                </ion-label>
+              </ion-item>
+        
+    </ion-list>
+</ion-content>
+
+  
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+        <ion-tab-button [routerLink]="'/home'">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+         <!-- <ion-badge>6</ion-badge> -->
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/attivita-new-offerte'">
+          <ion-icon name="construct"></ion-icon>
+          <ion-label>Attività</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/ricerca-attivita'">
+          <ion-icon name="search"></ion-icon>
+          <ion-label>Ricerca</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/profilo-anagrafica'">
+          <ion-icon name="person"></ion-icon>
+          <ion-label>Profilo</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

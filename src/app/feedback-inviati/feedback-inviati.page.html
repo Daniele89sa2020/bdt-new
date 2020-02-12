@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Feedback Inviati</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button class="tab-selected" [routerLink]="'/feedback-inviati'">
+          <ion-label>Inviati</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/feedback-ricevuti'">
+          <ion-label>Ricevuti</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+  
+  <!--ELENCO FEEDBACK-->
+  <ion-list lines="none">
+      
+    
+    <ion-item [routerLink]="'/modifica-feedback-inviati'">
+        <ion-avatar slot="start">
+            <img src="/assets/avatar1.png">
+        </ion-avatar>
+        <ion-label>
+         <b>Carmen Santoro</b>
+         <p>Consulenza Giuridica</p>
+         <p>14/01/2020</p>
+             
+         <p class="no">Feedback NON inserito</p>
+         <p class="no">Clicca per inserire</p>  	
+        </ion-label>
+      </ion-item>
+
+    
+    <ion-item [routerLink]="'/modifica-feedback-inviati'">
+        <ion-avatar slot="start">
+            <img src="/assets/avatar3.png">
+        </ion-avatar>
+        <ion-label>
+         <b>Homar Hassid</b>
+         <p>Assistenza Medica</p>
+         <p>23/12/2019</p>
+          <p class="si">Feedback Inserito.</p>
+          <p class="si"> Clicca per modificare</p>  	
+         </ion-label>
+      </ion-item>
+
+
+    <ion-item [routerLink]="'/modifica-feedback-inviati'">
+        <ion-avatar slot="start">
+            <img src="/assets/avatar5.png">
+        </ion-avatar>
+        <ion-label>
+         <b>Marco Galdi</b>
+         <p>Consulenza Personal Trainer</p>
+         <p>06/11/2019</p>
+         <p class="si">Feedback Inserito.</p>
+         <p class="si"> Clicca per modificare</p>    			
+        </ion-label> 
+    </ion-item>	  
+    
+    </ion-list>
+</ion-content>
+
+  
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+        <ion-tab-button [routerLink]="'/home'">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+         <!-- <ion-badge>6</ion-badge> -->
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/attivita-new-offerte'">
+          <ion-icon name="construct"></ion-icon>
+          <ion-label>Attività</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/ricerca-attivita'">
+          <ion-icon name="search"></ion-icon>
+          <ion-label>Ricerca</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/profilo-anagrafica'">
+          <ion-icon name="person"></ion-icon>
+          <ion-label>Profilo</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

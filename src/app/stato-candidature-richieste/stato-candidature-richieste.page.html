@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Stato Candidature Richieste</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+        <ion-tab-button [routerLink]="'/stato-candidature-offerte'">
+          <ion-label>Offerte</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button class="tab-selected" [routerLink]="'/stato-candidature-richieste'">
+          <ion-label>Richieste</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+  <br> 
+  
+  <!--CARD 1--> 
+  <ion-card class="welcome-card">
+   <ion-card-header>
+     <ion-card-subtitle><b>Titolo Attività: Assistenza Infermieristica</b></ion-card-subtitle>
+ 
+         <ion-item>
+           <ion-avatar slot="start">
+              <img src="/assets/avatar4.png">
+           </ion-avatar>   
+            
+           
+           <div>
+             <b>Luogo:</b> Baronissi (SA)
+             <b>Data:</b> dal 09/01/2020 al 28/02/2020
+           </div>
+     
+         </ion-item>
+   </ion-card-header>
+   
+   <ion-card-content>
+       <ion-card-title>Offerta: + 2h</ion-card-title>
+       
+       <ion-button expand="block" [routerLink]="'/dettagli-candidature'">Elenco Candidati</ion-button>
+   </ion-card-content>
+</ion-card>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+        <ion-tab-button [routerLink]="'/home'">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+         <!-- <ion-badge>6</ion-badge> -->
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/attivita-new-offerte'">
+          <ion-icon name="construct"></ion-icon>
+          <ion-label>Attività</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/ricerca-attivita'">
+          <ion-icon name="search"></ion-icon>
+          <ion-label>Ricerca</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/profilo-anagrafica'">
+          <ion-icon name="person"></ion-icon>
+          <ion-label>Profilo</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

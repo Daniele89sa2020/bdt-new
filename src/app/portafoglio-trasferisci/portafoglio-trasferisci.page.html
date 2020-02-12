@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Portafoglio Trasferisci</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button [routerLink]="'/portafoglio-saldo'">
+          <ion-label>Saldo</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/portafoglio-acquista'">
+          <ion-label>Acquista</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button class="tab-selected" [routerLink]="'/portafoglio-trasferisci'">
+          <ion-label>Tresferisci</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+  
+     
+
+  <ion-card class="welcome-card">
+    <ion-card-header>
+          <ion-item>
+            <ion-avatar slot="start">
+               <img src="/assets/avatar4.png">
+            </ion-avatar>
+            <ion-label>Mario Rossi
+      <div>
+        <img src="/assets/5star.png" style="height:24px;">
+      </div>
+      </ion-label>
+          </ion-item>
+        <ion-card-content>
+          <h2>Tempo: 2h</h2>
+          </ion-card-content>
+    
+    <img src="/assets/trasf.png">
+    
+          <ion-item>
+            <ion-avatar slot="start">
+               <img src="/assets/avatar10.png">
+            </ion-avatar>
+            <ion-label>Filippo Neri
+      <div>
+        <img src="/assets/5star.png" style="height:24px;">
+      </div>
+      </ion-label>
+          </ion-item>	
+    
+    </ion-card-header>
+  <ion-button expand="block">Invia</ion-button>
+  
+  </ion-card>
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+      <ion-tabs>
+        <ion-tab-bar slot="bottom" >
+          <ion-tab-button [routerLink]="'/home'">
+            <ion-icon name="home"></ion-icon>
+            <ion-label>Home</ion-label>
+           <!-- <ion-badge>6</ion-badge> -->
+          </ion-tab-button>
+  
+          <ion-tab-button [routerLink]="'/attivita-new-offerte'">
+            <ion-icon name="construct"></ion-icon>
+            <ion-label>Attività</ion-label>
+          </ion-tab-button>
+  
+          <ion-tab-button [routerLink]="'/ricerca-attivita'">
+            <ion-icon name="search"></ion-icon>
+            <ion-label>Ricerca</ion-label>
+          </ion-tab-button>
+  
+          <ion-tab-button [routerLink]="'/profilo-anagrafica'">
+            <ion-icon name="person"></ion-icon>
+            <ion-label>Profilo</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+  
+      </ion-tabs>
+    </ion-toolbar>
+  </ion-footer>
+  

@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profilo Curriculum</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+        <ion-tab-button [routerLink]="'/profilo-anagrafica'" [routerDirection]="forward">
+          <ion-label>Anagrafica</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button class="tab-selected" [routerLink]="'/profilo-curriculum'">
+          <ion-label>Curriculum</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+  
+  <!--DATI CURRICULIM-->
+  <ion-list lines="none">
+    <ion-list-header class="header">
+      <ion-label>Dati Curriculum</ion-label>
+      <ion-button [routerLink]="'/profilo-modifica-curriculum'">
+       <ion-icon name="create"> </ion-icon> Modifica 
+     </ion-button><br><br>
+    </ion-list-header>
+    
+  
+    <ion-item>
+      <ion-label>
+        <b>Titolo di Studio:</b> <br> {{currentUser.titolo_studio}}<br>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>     
+      <ion-label>
+        <b>Esperienze Lavorative:</b> <br> {{currentUser.esperienze_lavorative}} <br>
+      </ion-label>
+    </ion-item>  
+    
+    <ion-item>
+      <ion-label>
+        <b>Competenze:</b> <br> {{currentUser.competenze}} <br>
+      </ion-label>
+    </ion-item> 
+    
+    <ion-item>
+      <ion-label>
+        <b>Conoscenze Linguistiche:</b> <br>{{currentUser.conoscenze_linguistiche}}<br>
+      </ion-label>
+    </ion-item>
+  
+  </ion-list>
+</ion-content>
+
+  
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+        <ion-tab-button [routerLink]="'/home'" [routerDirection]="root">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+         <!-- <ion-badge>6</ion-badge> -->
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/attivita-new-offerte'" [routerDirection]="root">
+          <ion-icon name="construct"></ion-icon>
+          <ion-label>Attività</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/ricerca-attivita'" [routerDirection]="root">
+          <ion-icon name="search"></ion-icon>
+          <ion-label>Ricerca</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/profilo-anagrafica'" [routerDirection]="root">
+          <ion-icon name="person"></ion-icon>
+          <ion-label>Profilo</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

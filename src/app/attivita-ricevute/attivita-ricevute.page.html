@@ -1,0 +1,141 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Attività Ricevute</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button [routerLink]="'/attivita-storico'">
+          <ion-label>Storico</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/attivita-svolte'">
+          <ion-label>Svolte</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button class="tab-selected" [routerLink]="'/attivita-ricevute'">
+          <ion-label>Ricevute</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+
+ <!--CARD 1--> 
+ <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Titolo Attività: Consulenza Giuridica</ion-card-subtitle>
+  
+          <ion-item>
+            <ion-avatar slot="start">
+               <img src="/assets/avatar1.png">
+            </ion-avatar>   
+             
+            
+            <div>
+              <h2>Carmen Santoro</h2>
+              <b>Feedback - 14/01/2020</b>
+              <img src="/assets/5star.png" style="height:16px;width:80px;">
+            </div>
+      
+          </ion-item>
+    </ion-card-header>
+    
+    <ion-card-content>
+        <ion-card-title>Transazione: - 1h 30m</ion-card-title>
+        
+        <ion-button expand="block" [routerLink]="'/dettagli-attivita-ricevute'">Dettagli Attività Ricevuta</ion-button>
+    </ion-card-content>
+</ion-card>
+
+<!--CARD 2-->
+<ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Titolo Attività: Assistenza Medica</ion-card-subtitle>
+  
+          <ion-item>
+            <ion-avatar slot="start">
+               <img src="/assets/avatar3.png">
+            </ion-avatar>   
+             
+            
+            <div>
+              <h2>Homar Hassid</h2>
+              <b>Feedback - 23/12/2019</b>
+              <img src="/assets/5star.png" style="height:16px;width:80px;">
+            </div>
+      
+          </ion-item>
+    </ion-card-header>
+    
+    <ion-card-content>
+        <ion-card-title>Transazione: - 3h</ion-card-title>
+        
+        <ion-button expand="block" [routerLink]="'/dettagli-attivita-ricevute'">Dettagli Attività Ricevuta</ion-button>
+    </ion-card-content>
+</ion-card>
+
+<!--CARD 3-->
+<ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Titolo Attività: Consulenza Personal Trainer</ion-card-subtitle>
+  
+          <ion-item>
+            <ion-avatar slot="start">
+               <img src="/assets/avatar5.png">
+            </ion-avatar>   
+             
+            
+            <div>
+              <h2>Marco Galdi</h2>
+              <b>Feedback - 06/11/2019</b>
+              <img src="/assets/5star.png" style="height:16px;width:80px;">
+            </div>
+      
+          </ion-item>
+    </ion-card-header>
+    
+    <ion-card-content>
+        <ion-card-title>Transazione: - 2h</ion-card-title>
+        
+        <ion-button expand="block" [routerLink]="'/dettagli-attivita-ricevute'">Dettagli Attività Ricevuta</ion-button>
+    </ion-card-content>
+</ion-card>
+</ion-content>
+
+  
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+        <ion-tab-button [routerLink]="'/home'">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+         <!-- <ion-badge>6</ion-badge> -->
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/attivita-new-offerte'">
+          <ion-icon name="construct"></ion-icon>
+          <ion-label>Attività</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/ricerca-attivita'">
+          <ion-icon name="search"></ion-icon>
+          <ion-label>Ricerca</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/profilo-anagrafica'">
+          <ion-icon name="person"></ion-icon>
+          <ion-label>Profilo</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

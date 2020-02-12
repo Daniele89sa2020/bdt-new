@@ -1,0 +1,175 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="'/login'">
+       <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Registrazione</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <form #form="ngForm" (ngSubmit)="ionRegistration(form.value)">
+      <ion-grid>
+        <ion-row  justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+            
+            <div padding>
+             
+              <ion-label>
+                Nome:
+              </ion-label>
+              <ion-item>
+                <ion-input  name="nome" type="text" placeholder="Nome" ngModel required></ion-input>
+              </ion-item>
+              <br>
+  
+              <ion-label>
+                Cognome:
+              </ion-label>
+              <ion-item>
+                <ion-input name="cognome" type="text" placeholder="Cognome" ngModel required></ion-input>
+              </ion-item>
+              <br>
+  
+              <ion-label>
+                Data di Nascita:
+              </ion-label>
+              <ion-item>
+                <ion-input name="data_nascita" type="text" placeholder="GG-MM-AA" ngModel required></ion-input>
+              </ion-item>
+              <br>
+  
+              <ion-label>
+                E-Mail:
+              </ion-label>
+              <ion-item>
+                <ion-input name="email" type="text" placeholder="GG-MM-AA" ngModel required></ion-input>
+              </ion-item>
+              <br>
+  
+              <ion-label>
+                Telefono:
+              </ion-label>
+              <ion-item>
+                <ion-input name="tel" type="text" placeholder="tel" ngModel required></ion-input>
+              </ion-item>
+              <br>
+  
+              <ion-label>
+              Sesso:
+              </ion-label>
+              <ion-item>
+                <ion-input name="sesso" type="text" placeholder="sesso" ngModel required></ion-input>
+              </ion-item>
+              <br>
+  
+              <ion-label>
+              Titolo di Studio:
+              </ion-label>
+              <ion-item>
+                <ion-input name="titolo_studio" type="text" placeholder="studio" ngModel required></ion-input>
+              </ion-item>
+              <br>
+
+              <ion-label>
+                Eseperienze Lavorative:
+                </ion-label>
+              <ion-item>
+              <ion-input name="esperienze_lavorative" type="text" placeholder="esperienze_lavorative" ngModel required></ion-input>
+            </ion-item>
+            <br>              
+            
+            <ion-label>
+              Conoscenze Linguistiche:
+            </ion-label>
+            <ion-item>
+              <ion-input name="conoscenze_linguistiche" type="text" placeholder="conoscenze_linguistiche" ngModel required></ion-input>
+            </ion-item>
+            <br>
+
+            <ion-label>
+              Competenze:
+            </ion-label>
+            <ion-item>
+              <ion-input name="competenze" type="text" placeholder="competenze" ngModel required></ion-input>
+            </ion-item>
+            <br>
+
+
+            <ion-label>
+              Password:
+            </ion-label>
+            <ion-item>
+              <ion-input name="password" type="text" placeholder="password" ngModel required></ion-input>
+            </ion-item>
+            <br>
+
+            <ion-label>
+              CAP:
+            </ion-label>
+            <ion-item>
+              <ion-input name="cap" type="text" placeholder="cap" ngModel required></ion-input>
+            </ion-item>
+            <br>
+
+            <ion-label>
+              Città:
+            </ion-label>
+            <ion-item>
+              <ion-input name="citta" type="text" placeholder="citta" ngModel required></ion-input>
+            </ion-item>
+            <br>
+
+            <ion-label>
+              Provincia:
+            </ion-label>
+            <ion-item>
+              <ion-input name="provincia" type="text" placeholder="provincia" ngModel required></ion-input>
+            </ion-item>
+            <br>
+
+            <ion-label>
+              Indirizzo:
+            </ion-label>
+            <ion-item>
+              <ion-input name="indirizzo" type="text" placeholder="indirizzo" ngModel required></ion-input>
+            </ion-item>
+            <br>
+
+            <ion-label>
+              Regione:
+            </ion-label>
+            <ion-item>
+              <ion-input name="regione" type="text" placeholder="regione" ngModel required></ion-input>
+            </ion-item>
+            <br>
+
+            <ion-label>
+              Nazione:
+            </ion-label>
+            <ion-item>
+              <ion-input name="nazione" type="text" placeholder="nazione" ngModel required></ion-input>
+            </ion-item>
+            <br>
+
+            <ion-label>
+              Saldo Tempo:
+            </ion-label>
+            <ion-item>
+              <ion-input name="saldo_tempo" type="text" placeholder="saldo_tempo" ngModel required></ion-input>
+            </ion-item>
+            <br>
+  
+              
+              <ion-button  size="default" type="submit" expand="block">Registrati</ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+
+
+</ion-content>

@@ -1,0 +1,138 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Stato Candidature Offerte</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+        <ion-tab-button class="tab-selected" [routerLink]="'/stato-candidature-offerte'">
+          <ion-label>Offerte</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/stato-candidature-richieste'">
+          <ion-label>Richieste</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+  <br>
+
+   <!--CARD 1--> 
+   <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle> <b>Titolo Attività: Assistenza Informatica</b></ion-card-subtitle>
+  
+          <ion-item>
+            <ion-avatar slot="start">
+               <img src="/assets/avatar4.png">
+            </ion-avatar>   
+             
+            
+            <div>
+              <b>Luogo:</b> Baronissi (SA)<br>
+              <b>Data:</b> dal 09/01/2020 al 28/02/2020<br>
+            </div>
+      
+          </ion-item>
+    </ion-card-header>
+    
+    <ion-card-content>
+      STATO
+        <ion-card-title>In corso</ion-card-title>
+        
+        <ion-button expand="block" [routerLink]="'/dettagli-candidature'">Dettagli Candidati</ion-button>
+    </ion-card-content>
+</ion-card>
+
+  <!--CARD 2--> 
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle> <b>Titolo Attività: Assistenza Informatica</b></ion-card-subtitle>
+  
+          <ion-item>
+            <ion-avatar slot="start">
+               <img src="/assets/avatar6.png">
+            </ion-avatar>   
+             
+            
+            <div>
+              <b>Luogo:</b> Baronissi (SA)<br>
+              <b>Data:</b> dal 10/03/2020 al 28/03/2020<br>
+            </div>
+      
+          </ion-item>
+    </ion-card-header>
+    
+    <ion-card-content>
+      STATO
+        <ion-card-title>Rifiutato</ion-card-title>
+        
+        <ion-button expand="block" [routerLink]="'/dettagli-candidature'">Dettagli Candidati</ion-button>
+    </ion-card-content>
+</ion-card>
+
+  <!--CARD 3--> 
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle> <b>Titolo Attività: Assistenza Informatica</b></ion-card-subtitle>
+  
+          <ion-item>
+            <ion-avatar slot="start">
+               <img src="/assets/avatar3.png">
+            </ion-avatar>   
+             
+            
+            <div>
+              <b>Luogo:</b> Baronissi (SA)<br>
+              <b>Data:</b> dal 06/04/2020 al 10/04/2020<br>
+            </div>
+      
+          </ion-item>
+    </ion-card-header>
+    
+    <ion-card-content>
+      STATO
+        <ion-card-title>Accettato</ion-card-title>
+              <ion-button expand="block" [routerLink]="'/dettagli-candidature'">Dettagli Candidati</ion-button>
+    </ion-card-content>
+</ion-card>
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+        <ion-tab-button [routerLink]="'/home'">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+         <!-- <ion-badge>6</ion-badge> -->
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/attivita-new-offerte'">
+          <ion-icon name="construct"></ion-icon>
+          <ion-label>Attività</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/ricerca-attivita'">
+          <ion-icon name="search"></ion-icon>
+          <ion-label>Ricerca</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="'/profilo-anagrafica'">
+          <ion-icon name="person"></ion-icon>
+          <ion-label>Profilo</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
