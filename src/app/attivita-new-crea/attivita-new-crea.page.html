@@ -26,64 +26,370 @@
       </ion-tab-bar>
     </ion-tabs>
   </ion-toolbar>
-
-  <form #form="ngForm" (ngSubmit)="ionCreaAttivita(form.value,{{currentUser.id}})">
+                                            
+  <form #form="ngForm" (ngSubmit)="ionCreaAttivita(form.value)">
     <ion-grid>
       <ion-row  justify-content-center>
         <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
           
           <div padding>
            
-            <ion-label>
-              <b>Nome Attività</b>
+            <ion-item>
+              <ion-label><b>Categoria Attività</b></ion-label>
+                 <ion-select name="categoria" ngModel required>
+                      <ion-select-option value="Avvocato">Avvocato</ion-select-option>
+                      <ion-select-option value="Baby Sitter">Baby Sitter</ion-select-option>
+                      <ion-select-option value="Badante">Badante</ion-select-option>
+                      <ion-select-option value="Commercialista">Commercialista</ion-select-option>
+                      <ion-select-option value="Consulente Informatico">Consulente Informatico</ion-select-option>
+                      <ion-select-option value="Dentista">Dentista</ion-select-option>
+                      <ion-select-option value="Dog Sitters">Dog Sitters</ion-select-option>
+                      <ion-select-option value="Elettricista">Elettricista</ion-select-option>
+                      <ion-select-option value="Idraulico">Idraulico</ion-select-option>
+                      <ion-select-option value="Infermiere">Infermiere</ion-select-option>
+                      <ion-select-option value="Medico">Medico</ion-select-option>
+                  </ion-select>
+          </ion-item>
+          <br><br>
+
+          <ion-label>
+            <b>Tipo Attività</b>
+          </ion-label>
+          <ion-toolbar>
+            <ion-segment>
+              <ion-segment-button selected (click)="selectType('o')">Offerta
+              </ion-segment-button>
+              <ion-segment-button (click)="selectType('r')">Richiesta
+              </ion-segment-button>
+            </ion-segment>
+          </ion-toolbar>
+          <ion-input id="tipo" name="tipo" type="hidden" value="o" ngModel></ion-input>
+          <br><br>
+       
+
+
+          <ion-label>
+            <b>Descrizione</b>
+          </ion-label>
+          <ion-item>
+            <ion-input name="descrizione" type="text" placeholder="" ngModel required></ion-input>
+          </ion-item>
+          <br><br>
+
+
+             <ion-item>
+                 <ion-label><b>Provincia</b></ion-label>
+                    <ion-select name="provincia" ngModel required>
+                         <ion-select-option value="AG">Agrigento</ion-select-option>	
+                         <ion-select-option value="AL">Alessandria</ion-select-option>
+                         <ion-select-option value="AN">Ancona</ion-select-option>
+                         <ion-select-option value="AO">Aosta</ion-select-option>
+                         <ion-select-option value="AQ">L'Aquila</ion-select-option>
+                         <ion-select-option value="AR">Arezzo</ion-select-option>
+                         <ion-select-option value="AP">Ascoli-Piceno</ion-select-option>
+                         <ion-select-option value="AT">Asti</ion-select-option>
+                         <ion-select-option value="AV">Avellino</ion-select-option>
+                         <ion-select-option value="BA">Bari</ion-select-option>
+                         <ion-select-option value="BT">Barletta-Andria-Trani</ion-select-option>
+                         <ion-select-option value="BL">Belluno</ion-select-option>
+                         <ion-select-option value="BN">Benevento</ion-select-option>
+                         <ion-select-option value="BG">Bergamo</ion-select-option>
+                         <ion-select-option value="BI">Biella</ion-select-option>
+                         <ion-select-option value="BO">Bologna</ion-select-option>
+                         <ion-select-option value="BZ">Bolzano</ion-select-option>
+                         <ion-select-option value="BS">Brescia</ion-select-option>
+                         <ion-select-option value="BR">Brindisi</ion-select-option>
+                         <ion-select-option value="CA">Cagliari</ion-select-option>
+                         <ion-select-option value="CL">Caltanissetta</ion-select-option>
+                         <ion-select-option value="CB">Campobasso</ion-select-option>
+                         <ion-select-option value="CI">Carbonia Iglesias</ion-select-option>
+                         <ion-select-option value="CE">Caserta</ion-select-option>
+                         <ion-select-option value="CT">Catania</ion-select-option>
+                         <ion-select-option value="CZ">Catanzaro</ion-select-option>
+                         <ion-select-option value="CH">Chieti</ion-select-option>
+                         <ion-select-option value="CO">Como</ion-select-option>
+                         <ion-select-option value="CS">Cosenza</ion-select-option>
+                         <ion-select-option value="CR">Cremona</ion-select-option>
+                         <ion-select-option value="KR">Crotone</ion-select-option>
+                         <ion-select-option value="CN">Cuneo</ion-select-option>
+                         <ion-select-option value="EN">Enna</ion-select-option>
+                         <ion-select-option value="FM">Fermo</ion-select-option>
+                         <ion-select-option value="FE">Ferrara</ion-select-option>
+                         <ion-select-option value="FI">Firenze</ion-select-option>
+                         <ion-select-option value="FG">Foggia</ion-select-option>
+                         <ion-select-option value="FC">Forli-Cesena</ion-select-option>
+                         <ion-select-option value="FR">Frosinone</ion-select-option>
+                         <ion-select-option value="GE">Genova</ion-select-option>
+                         <ion-select-option value="GO">Gorizia</ion-select-option>
+                         <ion-select-option value="GR">Grosseto</ion-select-option>
+                         <ion-select-option value="IM">Imperia</ion-select-option>
+                         <ion-select-option value="IS">Isernia</ion-select-option>
+                         <ion-select-option value="SP">La-Spezia</ion-select-option>
+                         <ion-select-option value="LT">Latina</ion-select-option>
+                         <ion-select-option value="LE">Lecce</ion-select-option>
+                         <ion-select-option value="LC">Lecco</ion-select-option>
+                         <ion-select-option value="LI">Livorno</ion-select-option>
+                         <ion-select-option value="LO">Lodi</ion-select-option>
+                         <ion-select-option value="LU">Lucca</ion-select-option>
+                         <ion-select-option value="MC">Macerata</ion-select-option>
+                         <ion-select-option value="MN">Mantova</ion-select-option>
+                         <ion-select-option value="MS">Massa-Carrara</ion-select-option>
+                         <ion-select-option value="MT">Matera</ion-select-option>
+                         <ion-select-option value="VS">Medio Campidano</ion-select-option>
+                         <ion-select-option value="ME">Messina</ion-select-option>
+                         <ion-select-option value="MI">Milano</ion-select-option>
+                         <ion-select-option value="MO">Modena</ion-select-option>
+                         <ion-select-option value="MB">Monza-Brianza</ion-select-option>
+                         <ion-select-option value="NA">Napoli</ion-select-option>
+                         <ion-select-option value="NO">Novara</ion-select-option>
+                         <ion-select-option value="NU">Nuoro</ion-select-option>
+                         <ion-select-option value="OG">Ogliastra</ion-select-option>
+                         <ion-select-option value="OT">Olbia Tempio</ion-select-option>
+                         <ion-select-option value="OR">Oristano</ion-select-option>
+                         <ion-select-option value="PD">Padova</ion-select-option>
+                         <ion-select-option value="PA">Palermo</ion-select-option>
+                         <ion-select-option value="PR">Parma</ion-select-option>
+                         <ion-select-option value="PV">Pavia</ion-select-option>
+                         <ion-select-option value="PG">Perugia</ion-select-option>
+                         <ion-select-option value="PU">Pesaro-Urbino</ion-select-option>
+                         <ion-select-option value="PE">Pescara</ion-select-option>
+                         <ion-select-option value="PC">Piacenza</ion-select-option>
+                         <ion-select-option value="PI">Pisa</ion-select-option>
+                         <ion-select-option value="PT">Pistoia</ion-select-option>
+                         <ion-select-option value="PN">Pordenone</ion-select-option>
+                         <ion-select-option value="PZ">Potenza</ion-select-option>
+                         <ion-select-option value="PO">Prato</ion-select-option>
+                         <ion-select-option value="RG">Ragusa</ion-select-option>
+                         <ion-select-option value="RA">Ravenna</ion-select-option>
+                         <ion-select-option value="RC">Reggio-Calabria</ion-select-option>
+                         <ion-select-option value="RE">Reggio-Emilia</ion-select-option>
+                         <ion-select-option value="RI">Rieti</ion-select-option>
+                         <ion-select-option value="RN">Rimini</ion-select-option>
+                         <ion-select-option value="Roma">Roma</ion-select-option>
+                         <ion-select-option value="RO">Rovigo</ion-select-option>
+                         <ion-select-option value="SA">Salerno</ion-select-option>
+                         <ion-select-option value="SS">Sassari</ion-select-option>
+                         <ion-select-option value="SV">Savona</ion-select-option>
+                         <ion-select-option value="SI">Siena</ion-select-option>
+                         <ion-select-option value="SR">Siracusa</ion-select-option>
+                         <ion-select-option value="SO">Sondrio</ion-select-option>
+                         <ion-select-option value="TA">Taranto</ion-select-option>
+                         <ion-select-option value="TE">Teramo</ion-select-option>
+                         <ion-select-option value="TR">Terni</ion-select-option>
+                         <ion-select-option value="TO">Torino</ion-select-option>
+                         <ion-select-option value="TP">Trapani</ion-select-option>
+                         <ion-select-option value="TN">Trento</ion-select-option>
+                         <ion-select-option value="TV">Treviso</ion-select-option>
+                         <ion-select-option value="TS">Trieste</ion-select-option>
+                         <ion-select-option value="UD">Udine</ion-select-option>
+                         <ion-select-option value="VA">Varese</ion-select-option>
+                         <ion-select-option value="VE">Venezia</ion-select-option>
+                         <ion-select-option value="VB">Verbania</ion-select-option>
+                         <ion-select-option value="VC">Vercelli</ion-select-option>
+                         <ion-select-option value="VR">Verona</ion-select-option>
+                         <ion-select-option value="VV">Vibo-Valentia</ion-select-option>
+                         <ion-select-option value="VI">Vicenza</ion-select-option>
+                         <ion-select-option value="VT">Viterbo</ion-select-option>
+                     </ion-select>
+             </ion-item>
+             <br><br>
+
+
+             <ion-label>
+              <b>Città</b>
             </ion-label>
             <ion-item>
-              <ion-input name="tel" type="text" placeholder="" ngModel required></ion-input>
+              <ion-input name="citta" type="text" placeholder="" ngModel required></ion-input>
+            </ion-item>
+            <br><br>
+
+            <ion-label>
+              <b>Indirizzo</b>
+            </ion-label>
+            <ion-item>
+              <ion-input name="indirizzo" type="text" placeholder="" ngModel required></ion-input>
+            </ion-item>
+            <br><br>
+
+            <ion-label><b>CAP</b></ion-label>
+            <ion-item>
+              <ion-input name="cap" type="text" placeholder="" ngModel required></ion-input>
             </ion-item>
             <br><br>
 
 
-            <ion-label>
-              <b>Tipo Attività</b>
-            </ion-label>
-            <ion-toolbar>
-              <ion-segment name="tipo" (ionChange)="segmentChanged($event)" value="o">
-                <ion-segment-button value="o" selected (Click)="selectTipe('o')">Offerta
-                </ion-segment-button>
-                <ion-segment-button value="r" (Click)="selectTipe('r')">Richiesta
-                </ion-segment-button>
-              </ion-segment>
-            </ion-toolbar>
-            <ion-input id="tipo" name="tipo" type="hidden" value="o" ngModel></ion-input>
+
+            
+            <ion-label><b>Data Inizio Attività</b></ion-label>
+              <ion-item>
+                <ion-label><b>Giorno</b></ion-label>
+                <ion-select name="giorno_i" ngModel required>
+                  <ion-select-option value="01" selected>01</ion-select-option>
+                  <ion-select-option value="02">02</ion-select-option>
+                  <ion-select-option value="03">03</ion-select-option>
+                  <ion-select-option value="04">04</ion-select-option>
+                  <ion-select-option value="05">05</ion-select-option>
+                  <ion-select-option value="06">06</ion-select-option>
+                  <ion-select-option value="07">07</ion-select-option>
+                  <ion-select-option value="08">08</ion-select-option>
+                  <ion-select-option value="09">09</ion-select-option>
+                  <ion-select-option value="10">10</ion-select-option>
+                  <ion-select-option value="11">11</ion-select-option>
+                  <ion-select-option value="12">12</ion-select-option>
+                  <ion-select-option value="13">13</ion-select-option>
+                  <ion-select-option value="14">14</ion-select-option>
+                  <ion-select-option value="15">15</ion-select-option>
+                  <ion-select-option value="16">16</ion-select-option>
+                  <ion-select-option value="17">17</ion-select-option>
+                  <ion-select-option value="18">18</ion-select-option>
+                  <ion-select-option value="19">19</ion-select-option>
+                  <ion-select-option value="20">20</ion-select-option>
+                  <ion-select-option value="21">21</ion-select-option>
+                  <ion-select-option value="22">22</ion-select-option>
+                  <ion-select-option value="23">23</ion-select-option>
+                  <ion-select-option value="24">24</ion-select-option>
+                  <ion-select-option value="25">25</ion-select-option>
+                  <ion-select-option value="26">26</ion-select-option>
+                  <ion-select-option value="27">27</ion-select-option>
+                  <ion-select-option value="28">28</ion-select-option>
+                  <ion-select-option value="29">29</ion-select-option>
+                  <ion-select-option value="30">30</ion-select-option>
+                  <ion-select-option value="31">31</ion-select-option>
+                </ion-select>
+              </ion-item>
+              
+              
+              <ion-item>
+                <ion-label><b>Mese</b></ion-label>
+                <ion-select name="mese_i"ngModel required>
+                  <ion-select-option value="01" selected>January</ion-select-option>
+                  <ion-select-option value="02">February</ion-select-option>
+                  <ion-select-option value="03">March</ion-select-option>
+                  <ion-select-option value="04">April</ion-select-option>
+                  <ion-select-option value="05">May</ion-select-option>
+                  <ion-select-option value="06">June</ion-select-option>
+                  <ion-select-option value="07">July</ion-select-option>
+                  <ion-select-option value="08">August</ion-select-option>
+                  <ion-select-option value="09">September</ion-select-option>
+                  <ion-select-option value="10">October</ion-select-option>
+                  <ion-select-option value="11">November</ion-select-option>
+                  <ion-select-option value="12">December</ion-select-option>
+                </ion-select>
+               </ion-item>
+              
+               <ion-item>
+                <ion-label><b>Anno</b></ion-label>
+                <ion-select name="anno_i" ngModel required>
+                  <ion-select-option value="2020">2020</ion-select-option>
+                  <ion-select-option value="2021">2021</ion-select-option>
+                  <ion-select-option value="2022">2022</ion-select-option>
+                  <ion-select-option value="2023">2023</ion-select-option>
+                  <ion-select-option value="2024">2024</ion-select-option>
+                  <ion-select-option value="2025">2025</ion-select-option>
+                  <ion-select-option value="2026">2026</ion-select-option>
+                  <ion-select-option value="2027">2027</ion-select-option>
+                  <ion-select-option value="2028">2028</ion-select-option>
+                  <ion-select-option value="2029">2029</ion-select-option>
+                  <ion-select-option value="2030">2030</ion-select-option>
+                </ion-select>
+              </ion-item>
             <br><br>
+
+            
+            <ion-label><b>Data Fine Attività</b></ion-label>
+            <ion-item>
+              <ion-label><b>Giorno</b></ion-label>
+              <ion-select name="giorno_f" ngModel required>
+                <ion-select-option value="01" selected>01</ion-select-option>
+                <ion-select-option value="02">02</ion-select-option>
+                <ion-select-option value="03">03</ion-select-option>
+                <ion-select-option value="04">04</ion-select-option>
+                <ion-select-option value="05">05</ion-select-option>
+                <ion-select-option value="06">06</ion-select-option>
+                <ion-select-option value="07">07</ion-select-option>
+                <ion-select-option value="08">08</ion-select-option>
+                <ion-select-option value="09">09</ion-select-option>
+                <ion-select-option value="10">10</ion-select-option>
+                <ion-select-option value="11">11</ion-select-option>
+                <ion-select-option value="12">12</ion-select-option>
+                <ion-select-option value="13">13</ion-select-option>
+                <ion-select-option value="14">14</ion-select-option>
+                <ion-select-option value="15">15</ion-select-option>
+                <ion-select-option value="16">16</ion-select-option>
+                <ion-select-option value="17">17</ion-select-option>
+                <ion-select-option value="18">18</ion-select-option>
+                <ion-select-option value="19">19</ion-select-option>
+                <ion-select-option value="20">20</ion-select-option>
+                <ion-select-option value="21">21</ion-select-option>
+                <ion-select-option value="22">22</ion-select-option>
+                <ion-select-option value="23">23</ion-select-option>
+                <ion-select-option value="24">24</ion-select-option>
+                <ion-select-option value="25">25</ion-select-option>
+                <ion-select-option value="26">26</ion-select-option>
+                <ion-select-option value="27">27</ion-select-option>
+                <ion-select-option value="28">28</ion-select-option>
+                <ion-select-option value="29">29</ion-select-option>
+                <ion-select-option value="30">30</ion-select-option>
+                <ion-select-option value="31">31</ion-select-option>
+              </ion-select>
+            </ion-item>
+            
+            
+            <ion-item>
+              <ion-label><b>Mese</b></ion-label>
+              <ion-select name="mese_f"ngModel required>
+                <ion-select-option value="01" selected>January</ion-select-option>
+                <ion-select-option value="02">February</ion-select-option>
+                <ion-select-option value="03">March</ion-select-option>
+                <ion-select-option value="04">April</ion-select-option>
+                <ion-select-option value="05">May</ion-select-option>
+                <ion-select-option value="06">June</ion-select-option>
+                <ion-select-option value="07">July</ion-select-option>
+                <ion-select-option value="08">August</ion-select-option>
+                <ion-select-option value="09">September</ion-select-option>
+                <ion-select-option value="10">October</ion-select-option>
+                <ion-select-option value="11">November</ion-select-option>
+                <ion-select-option value="12">December</ion-select-option>
+              </ion-select>
+             </ion-item>
+            
+             <ion-item>
+              <ion-label><b>Anno</b></ion-label>
+              <ion-select name="anno_f" ngModel required>
+                <ion-select-option value="2020">2020</ion-select-option>
+                <ion-select-option value="2021">2021</ion-select-option>
+                <ion-select-option value="2022">2022</ion-select-option>
+                <ion-select-option value="2023">2023</ion-select-option>
+                <ion-select-option value="2024">2024</ion-select-option>
+                <ion-select-option value="2025">2025</ion-select-option>
+                <ion-select-option value="2026">2026</ion-select-option>
+                <ion-select-option value="2027">2027</ion-select-option>
+                <ion-select-option value="2028">2028</ion-select-option>
+                <ion-select-option value="2029">2029</ion-select-option>
+                <ion-select-option value="2030">2030</ion-select-option>
+              </ion-select>
+            </ion-item>
+          <br><br>
             
 
 
-            <ion-label>
-              <b>Descrizione</b>
-            </ion-label>
-            <ion-item>
-              <ion-input name="tel" type="text" placeholder="" ngModel required></ion-input>
-            </ion-item>
-            <br><br>
-
-            
-            <ion-label>
-              <b>Durata</b>
-            </ion-label>
-            <ion-item>
-              <ion-input name="tel" type="text" placeholder="" ngModel required></ion-input>
-            </ion-item>
-            <br><br>
-
-            
-            <ion-label>
-              <b>Luogo</b>
-            </ion-label>
-            <ion-item>
-              <ion-input name="tel" type="text" placeholder="" ngModel required></ion-input>
-            </ion-item>
-            <br><br>
+          <ion-item>
+            <ion-label><b>Tempo Richiesto</b></ion-label>
+            <ion-select name="prezzo" ngModel required>
+              <ion-select-option value="60">1 h</ion-select-option>
+              <ion-select-option value="90">1 h 30m</ion-select-option>
+              <ion-select-option value="120">2 h</ion-select-option>
+              <ion-select-option value="150">2 h 30 min</ion-select-option>
+              <ion-select-option value="180">3 h</ion-select-option>
+              <ion-select-option value="210">3 h 30 min</ion-select-option>
+              <ion-select-option value="240">4 h</ion-select-option>
+              <ion-select-option value="270">4 h 30 min</ion-select-option>
+              <ion-select-option value="300">5 h </ion-select-option>
+              <ion-select-option value="330">5 h 30 min</ion-select-option>
+              <ion-select-option value="360">6 h</ion-select-option>
+            </ion-select>
+          </ion-item>
+        <br><br>
 
 
             <ion-button  size="default" type="submit" expand="block">Crea</ion-button>
