@@ -5,18 +5,18 @@
        <ion-icon name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Elenco Candidati Offerte</ion-title>
+    <ion-title>Elenco Candidati Offerte </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item [routerLink]="'/dettagli-ricerca'">
+  <ion-item [routerLink]="'/dettagli-ricerca'" *ngFor="let candidato of elencoCandidati">
     <ion-avatar slot="start">
         <img src="/assets/avatar10.png">
     </ion-avatar>
     <ion-label>
-     <b>Filippo Neri</b>
-     <p>Infermiere</p>
+     <b>{{candidato.nome}} </b>
+     <p>{{candidato.competenze}}</p>
      
     
     <div>
@@ -32,48 +32,7 @@
   </ion-label>
   </ion-item>
   
-  <ion-item [routerLink]="'/dettagli-ricerca'">
-    <ion-avatar slot="start">
-        <img src="/assets/avatar11.png">
-    </ion-avatar>
-    <ion-label>
-     <b>Anna Coppola</b>
-     <p>Infermiere</p>
-     
-    <div>
-      <ion-button color="success">
-        Accetta
-       </ion-button>
-       
-      <ion-button color="danger">
-        Rifiuta
-       </ion-button>
-      </div> 
-    </ion-label>
-  </ion-item>
-
-
-
-
-<ion-item [routerLink]="'/dettagli-ricerca'">
-    <ion-avatar slot="start">
-        <img src="/assets/avatar13.png">
-    </ion-avatar>
-    <ion-label>
-     <b>Carla Ippolito</b>
-     <p>Infermiere</p>
-     
-    <div>
-      <ion-button color="success">
-        Accetta
-       </ion-button>
-       
-      <ion-button color="danger">
-        Rifiuta
-       </ion-button>
-      </div>
-    </ion-label>
-  </ion-item>
+  
 
 </ion-content>
 

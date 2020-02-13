@@ -26,9 +26,9 @@
       </ion-tab-bar>
     </ion-tabs>
   </ion-toolbar>  <!--CARD 1--> 
-  <ion-card class="welcome-card">
+  <ion-card class="welcome-card" *ngFor="let attivita of attivitaRichieste">
     <ion-card-header>
-      <ion-card-subtitle> <b>Titolo Attività: Assistenza Medica</b></ion-card-subtitle>
+      <ion-card-subtitle> <b>Titolo Attività: {{attivita.nome}}</b></ion-card-subtitle>
   
           <ion-item>
             <ion-avatar slot="start">
@@ -37,19 +37,25 @@
              
             
             <div>
-              <b>Luogo:</b> Baronissi (SA)<br>
-              <b>Data:</b> dal 09/01/2020 al 28/02/2020<br>
+              <b>Luogo:</b> {{attivita.citta}} ({{attivita.provincia}})<br>
+              <b>Data:</b> dal {{attivita.data_inizio}} al {{attivita.data_fine}}<br>
             </div>
       
           </ion-item>
 
+          <ion-item>
+            <div>
+              <b>Descrizione:</b> {{attivita.descrizione}}<br>
+            </div>
+      
+          </ion-item>
     </ion-card-header>
     
     <ion-card-content>
-        <ion-card-title>Costo: + 2h</ion-card-title>
+        <ion-card-title>Costo: {{attivita.prezzo / 60}}h</ion-card-title>
         
       <ion-item>
-        <ion-button expand="block" [routerLink]="'/elenco-candidati-offerte'">
+        <ion-button expand="block" (click)="goToElencoCandidati(attivita.id)">
           <ion-icon name="people"></ion-icon>
         </ion-button>
         

@@ -13,7 +13,6 @@ export class AttivitaNewCreaPage implements OnInit {
 
   
   public currentUser: any=null;
-  public mess:String;
 
 
   constructor(

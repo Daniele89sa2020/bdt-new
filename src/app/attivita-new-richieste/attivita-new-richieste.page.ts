@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Injectable, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { AlertController } from '../../../node_modules/@ionic/angular';
 import { NavController } from '@ionic/angular';
 import {ActivatedRoute, NavigationExtras, Router} from '@angular/router';
 
@@ -9,15 +11,55 @@ import {ActivatedRoute, NavigationExtras, Router} from '@angular/router';
 })
 export class AttivitaNewRichiestePage implements OnInit {
 
-  
   public currentUser: any=null;
+  public attivitaRichieste: any=null;
 
+  constructor(
+    private apiService: ApiService,
+    public alertCtrl: AlertController,
+    public navCtrl: NavController,
+    private activatedRoute: ActivatedRoute,
+    private router: Router) {}
 
-  constructor(public navCtrl: NavController,
-              public route: ActivatedRoute) { }
+    ngOnInit() {
+      this.currentUser=JSON.parse(localStorage.getItem('utente'));
+      this.caricaAttivitaRichieste();
+    }
+  
+    caricaAttivitaRichieste(){
 
-  ngOnInit() {
-    this.currentUser=JSON.parse(localStorage.getItem('utente'));
-  }
+      this.apiService.caricaAttivitaRichiesteCreate(this.currentUser).subscribe((data)=>{
+        this.attivitaRichieste = data['records'];
+  
+          /*if (data['status']=="no"){     
+                                      let messageNoLogin: any = {
+                                                          header: data['header'],
+                                                          message: data['message']
+                                                        };
+        
+                                      this.alertMex(messageNoLogin);                           
+                                    }
+              else{ 
+                  let messageNoLogin: any = {
+                                              header: data['header'],
+                                              message: data['message']
+                                            };
 
+                  this.alertMex(messageNoLogin); 
+              }*/
+        });
+      }
+    
+    
+    //FUNCTION NAVIGATION_____________________________________________________
+    goToElencoCandidati(idAttivita){
+      let navigationExtras: NavigationExtras = {
+        queryParams: {
+          id:idAttivita,
+        }
+      };
+      this.navCtrl.navigateForward(['/elenco-candidati-offerte'], navigationExtras);
+    }
+
+  
 }

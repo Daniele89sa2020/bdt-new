@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Injectable, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { AlertController } from '../../../node_modules/@ionic/angular';
 import { NavController } from '@ionic/angular';
 import {ActivatedRoute, NavigationExtras, Router} from '@angular/router';
 
@@ -11,12 +13,50 @@ export class ElencoCandidatiOffertePage implements OnInit {
 
 
   public currentUser: any=null;
+  public elencoCandidati: any=null;
+  public idAttivita;
+  constructor(
+    private apiService: ApiService,
+    public alertCtrl: AlertController,
+    public navCtrl: NavController,
+    private activatedRoute: ActivatedRoute,
+    private router: Router) {}
 
+    ngOnInit() {
+      this.currentUser=JSON.parse(localStorage.getItem('utente'));
+      this.caricaElencoCandidati();
+      this.activatedRoute.queryParams.subscribe(async params => {
+        this.idAttivita = params["id"];
+        alert(params["id"]);
+      });
+      this.caricaElencoCandidati();
+    }
+  
+    caricaElencoCandidati(){
 
-  constructor(public navCtrl: NavController,
-              public route: ActivatedRoute) { }
+      this.apiService.caricaUtentiCandidatiPerAttivita(JSON.stringify({id_attivita:""+this.idAttivita})).subscribe((data)=>{
+        this.elencoCandidati = data['records'];
+  
+          /*if (data['status']=="no"){     
+                                      let messageNoLogin: any = {
+                                                          header: data['header'],
+                                                          message: data['message']
+                                                        };
+        
+                                      this.alertMex(messageNoLogin);                           
+                                    }
+              else{ 
+                  let messageNoLogin: any = {
+                                              header: data['header'],
+                                              message: data['message']
+                                            };
 
-  ngOnInit() {
-    this.currentUser=JSON.parse(localStorage.getItem('utente'));
-  }
+                  this.alertMex(messageNoLogin); 
+              }*/
+        });
+      }
+    
+  
+
+  
 }
