@@ -40,10 +40,6 @@ const routes: Routes = [
     loadChildren: () => import('./elenco-candidati-offerte/elenco-candidati-offerte.module').then( m => m.ElencoCandidatiOffertePageModule)
   },
   {
-    path: 'elenco-candidati-richieste',
-    loadChildren: () => import('./elenco-candidati-richieste/elenco-candidati-richieste.module').then( m => m.ElencoCandidatiRichiestePageModule)
-  },
-  {
     path: 'modifica-attivita-offerte',
     loadChildren: () => import('./modifica-attivita-offerte/modifica-attivita-offerte.module').then( m => m.ModificaAttivitaOffertePageModule)
   },

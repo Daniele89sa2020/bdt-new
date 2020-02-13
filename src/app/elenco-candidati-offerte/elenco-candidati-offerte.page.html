@@ -5,31 +5,33 @@
        <ion-icon name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Elenco Candidati Offerte </ion-title>
+    <ion-title>Elenco Candidati</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item [routerLink]="'/dettagli-ricerca'" *ngFor="let candidato of elencoCandidati">
+  <!--<ion-item [routerLink]="'/dettagli-ricerca'" *ngFor="let candidato of elencoCandidati">-->
+  <ion-item *ngFor="let candidato of elencoCandidati">
     <ion-avatar slot="start">
         <img src="/assets/avatar10.png">
     </ion-avatar>
     <ion-label>
-     <b>{{candidato.nome}} </b>
-     <p>{{candidato.competenze}}</p>
-     
-    
-    <div>
-    <ion-button color="success">
-      Accetta
-     </ion-button>
-     
-    <ion-button color="danger">
-      Rifiuta
-     </ion-button>
-    </div>
+      <b>{{candidato.nome}} </b>
+      <p>{{candidato.competenze}}</p>
+      
+      
+      <div *ngIf="candidato.stato == 'attesa'">
+        <ion-button color="success" (click)="accettaCandidato(candidato.id_candidatura)">
+          Accetta
+        </ion-button>
+        
+        <ion-button color="danger" (click)="rifiutaCandidato(candidato.id_candidatura)">
+          Rifiuta
+        </ion-button>
+      </div>
+      <div *ngIf="candidato.stato != 'attesa'">{{candidato.stato}}</div>
 
-  </ion-label>
+    </ion-label>
   </ion-item>
   
   

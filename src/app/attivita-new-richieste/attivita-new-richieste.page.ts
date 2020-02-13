@@ -30,23 +30,6 @@ export class AttivitaNewRichiestePage implements OnInit {
 
       this.apiService.caricaAttivitaRichiesteCreate(this.currentUser).subscribe((data)=>{
         this.attivitaRichieste = data['records'];
-  
-          /*if (data['status']=="no"){     
-                                      let messageNoLogin: any = {
-                                                          header: data['header'],
-                                                          message: data['message']
-                                                        };
-        
-                                      this.alertMex(messageNoLogin);                           
-                                    }
-              else{ 
-                  let messageNoLogin: any = {
-                                              header: data['header'],
-                                              message: data['message']
-                                            };
-
-                  this.alertMex(messageNoLogin); 
-              }*/
         });
       }
     

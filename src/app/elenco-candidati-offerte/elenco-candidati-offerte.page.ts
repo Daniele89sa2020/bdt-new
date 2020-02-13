@@ -24,20 +24,24 @@ export class ElencoCandidatiOffertePage implements OnInit {
 
     ngOnInit() {
       this.currentUser=JSON.parse(localStorage.getItem('utente'));
-      this.caricaElencoCandidati();
       this.activatedRoute.queryParams.subscribe(async params => {
         this.idAttivita = params["id"];
-        alert(params["id"]);
       });
       this.caricaElencoCandidati();
     }
   
     caricaElencoCandidati(){
 
-      this.apiService.caricaUtentiCandidatiPerAttivita(JSON.stringify({id_attivita:""+this.idAttivita})).subscribe((data)=>{
+      this.apiService.caricaUtentiCandidatiPerAttivita(JSON.parse(JSON.stringify({id_attivita:this.idAttivita}))).subscribe((data)=>{
         this.elencoCandidati = data['records'];
+        });
+      }
+    
+    accettaCandidato(idCandidatura){
+      alert("sono qua "+idCandidatura);
+      this.apiService.cambiaStatoCandidatura(JSON.parse(JSON.stringify({id_candidatura:idCandidatura, stato:'accettato'}))).subscribe((data)=>{
   
-          /*if (data['status']=="no"){     
+              if (data['status']=="no"){     
                                       let messageNoLogin: any = {
                                                           header: data['header'],
                                                           message: data['message']
@@ -52,11 +56,40 @@ export class ElencoCandidatiOffertePage implements OnInit {
                                             };
 
                   this.alertMex(messageNoLogin); 
-              }*/
+              }
         });
-      }
-    
-  
+    }  
 
-  
+    rifiutaCandidato(idCandidatura){
+    
+      this.apiService.cambiaStatoCandidatura(JSON.parse(JSON.stringify({id_candidatura:idCandidatura, stato:'rifiutato'}))).subscribe((data)=>{
+              if (data['status']=="no"){     
+
+                                      let messageNoLogin: any = {
+                                                          header: data['header'],
+                                                          message: data['message']
+                                                        };
+        
+                                      this.alertMex(messageNoLogin);                           
+                                    }
+              else{ 
+                  let messageNoLogin: any = {
+                                              header: data['header'],
+                                              message: data['message']
+                                            };
+
+                  this.alertMex(messageNoLogin); 
+              }
+        });
+    }  
+
+    //ALERT
+    async alertMex(forTask) {
+      const alert = await this.alertCtrl.create({
+          header: forTask.header,
+          message: forTask.message,
+          buttons: [{text: 'ok',},]
+      });
+      await alert.present();
+    }
 }

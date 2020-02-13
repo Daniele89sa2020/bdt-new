@@ -30,6 +30,7 @@
 
   <!--CARD 1--> 
   <ion-card class="welcome-card" *ngFor="let attivita of attivitaOfferte">
+    <div *ngIf="attivita.attiva == 'si'">
     <ion-card-header>
       <ion-card-subtitle> <b>Titolo Attività: {{attivita.nome}}</b></ion-card-subtitle>
   
@@ -70,6 +71,7 @@
         </ion-button>
       </ion-item>
     </ion-card-content>
+  </div>
 </ion-card>
 
 </ion-content>

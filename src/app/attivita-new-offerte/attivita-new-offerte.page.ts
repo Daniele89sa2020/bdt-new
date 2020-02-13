@@ -31,23 +31,6 @@ export class AttivitaNewOffertePage implements OnInit {
 
       this.apiService.caricaAttivitaOfferteCreate(this.currentUser).subscribe((data)=>{
         this.attivitaOfferte = data['records'];
-  
-          /*if (data['status']=="no"){     
-                                      let messageNoLogin: any = {
-                                                          header: data['header'],
-                                                          message: data['message']
-                                                        };
-        
-                                      this.alertMex(messageNoLogin);                           
-                                    }
-              else{ 
-                  let messageNoLogin: any = {
-                                              header: data['header'],
-                                              message: data['message']
-                                            };
-
-                  this.alertMex(messageNoLogin); 
-              }*/
         });
       }
     
@@ -56,7 +39,7 @@ export class AttivitaNewOffertePage implements OnInit {
     goToElencoCandidati(idAttivita){
       let navigationExtras: NavigationExtras = {
         queryParams: {
-          id:idAttivita,
+          id:idAttivita
         }
       };
       this.navCtrl.navigateForward(['/elenco-candidati-offerte'], navigationExtras);
