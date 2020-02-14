@@ -27,7 +27,12 @@
       </ion-tab-bar>
     </ion-tabs>
   </ion-toolbar>
-
+  <!--In caso in cui non hai attività candidate-->
+  <ion-card class="welcome-card" *ngIf="attivitaOfferte == ''">
+    <ion-card-header>
+      <ion-card-subtitle> <b>Non offri nessuna attività</b></ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
   <!--CARD 1--> 
   <ion-card class="welcome-card" *ngFor="let attivita of attivitaOfferte">
     <div *ngIf="attivita.attiva == 'si'">

@@ -35,6 +35,12 @@ export class ElencoCandidatiPage implements OnInit {
         this.elencoCandidati = data['records'];
         });
       }
+
+    ngDoCheck(){
+      this.apiService.caricaUtentiCandidatiPerAttivita(JSON.parse(JSON.stringify({id_attivita:this.idAttivita}))).subscribe((data)=>{
+        this.elencoCandidati = data['records'];
+        });
+    }
     
     accettaCandidato(idCandidatura){
       alert("sono qua "+idCandidatura);

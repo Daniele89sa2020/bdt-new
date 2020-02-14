@@ -10,6 +10,13 @@
 </ion-header>
 
 <ion-content>
+  <!--In caso in cui non hai attività candidate-->
+  <ion-card class="welcome-card" *ngIf="elencoCandidati == ''">
+    <ion-card-header>
+      <ion-card-subtitle> <b>Non ci sono candidati</b></ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
   <!--<ion-item [routerLink]="'/dettagli-ricerca'" *ngFor="let candidato of elencoCandidati">-->
   <ion-item *ngFor="let candidato of elencoCandidati">
     <ion-avatar slot="start">
@@ -29,7 +36,8 @@
           Rifiuta
         </ion-button>
       </div>
-      <div *ngIf="candidato.stato != 'attesa'">{{candidato.stato}}</div>
+      <ion-label *ngIf="candidato.stato == 'accettato'" color="success">{{candidato.stato}}</ion-label>
+      <ion-label *ngIf="candidato.stato == 'rifiutato'" color="danger">{{candidato.stato}}</ion-label>
 
     </ion-label>
   </ion-item>

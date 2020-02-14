@@ -64,7 +64,9 @@ export class ApiService {
     return this.http.post('http://localhost/bdt-server/modificaDatiUtente.php',JSON.stringify(value));
   }
 
- 
+  visualizzaStatoCandidature(value){
+    return this.http.post('http://localhost/bdt-server/visualizzaStatoCandidature.php',JSON.stringify(value));
+  }
 
 /*
  
