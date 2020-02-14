@@ -4,14 +4,13 @@ import { AlertController } from '../../../node_modules/@ionic/angular';
 import { NavController } from '@ionic/angular';
 import {ActivatedRoute, NavigationExtras, Router} from '@angular/router';
 
+
 @Component({
-  selector: 'app-elenco-candidati-offerte',
-  templateUrl: './elenco-candidati-offerte.page.html',
-  styleUrls: ['./elenco-candidati-offerte.page.scss'],
+  selector: 'app-elenco-candidati',
+  templateUrl: './elenco-candidati.page.html',
+  styleUrls: ['./elenco-candidati.page.scss'],
 })
-export class ElencoCandidatiOffertePage implements OnInit {
-
-
+export class ElencoCandidatiPage implements OnInit {
   public currentUser: any=null;
   public elencoCandidati: any=null;
   public idAttivita;

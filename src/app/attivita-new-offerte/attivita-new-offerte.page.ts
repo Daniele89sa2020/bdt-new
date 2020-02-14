@@ -34,7 +34,6 @@ export class AttivitaNewOffertePage implements OnInit {
         });
       }
     
-  
     //FUNCTION NAVIGATION_____________________________________________________
     goToElencoCandidati(idAttivita){
       let navigationExtras: NavigationExtras = {
@@ -42,7 +41,7 @@ export class AttivitaNewOffertePage implements OnInit {
           id:idAttivita
         }
       };
-      this.navCtrl.navigateForward(['/elenco-candidati-offerte'], navigationExtras);
+      this.navCtrl.navigateForward(['/elenco-candidati'], navigationExtras);
     }
   
 }

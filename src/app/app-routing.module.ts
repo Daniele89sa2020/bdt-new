@@ -36,10 +36,6 @@ const routes: Routes = [
     loadChildren: () => import('./attivita-new-richieste/attivita-new-richieste.module').then( m => m.AttivitaNewRichiestePageModule)
   },
   {
-    path: 'elenco-candidati-offerte',
-    loadChildren: () => import('./elenco-candidati-offerte/elenco-candidati-offerte.module').then( m => m.ElencoCandidatiOffertePageModule)
-  },
-  {
     path: 'modifica-attivita-offerte',
     loadChildren: () => import('./modifica-attivita-offerte/modifica-attivita-offerte.module').then( m => m.ModificaAttivitaOffertePageModule)
   },
@@ -206,7 +202,12 @@ const routes: Routes = [
   {
     path: 'ricerca-attivita-offerte',
     loadChildren: () => import('./ricerca-attivita-offerte/ricerca-attivita-offerte.module').then( m => m.RicercaAttivitaOffertePageModule)
+  },
+  {
+    path: 'elenco-candidati',
+    loadChildren: () => import('./elenco-candidati/elenco-candidati.module').then( m => m.ElencoCandidatiPageModule)
   }
+
 ];
 
 @NgModule({

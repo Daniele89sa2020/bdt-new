@@ -41,7 +41,7 @@ export class AttivitaNewRichiestePage implements OnInit {
           id:idAttivita,
         }
       };
-      this.navCtrl.navigateForward(['/elenco-candidati-offerte'], navigationExtras);
+      this.navCtrl.navigateForward(['/elenco-candidati'], navigationExtras);
     }
 
   
