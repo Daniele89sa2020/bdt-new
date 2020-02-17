@@ -80,18 +80,4 @@ export class LoginPage implements OnInit {
     await alert.present();
   }
 
-
-
-//FUNCTION NAVIGATION_____________________________________________________
-
-goToHome(user){
-  let navigationExtras: NavigationExtras = {
-    queryParams: {
-      nome:user.nome,
-      cognome:user.cognome
-    }
-  };
-  this.navCtrl.navigateForward(['/home'], navigationExtras);
-}
-
 }

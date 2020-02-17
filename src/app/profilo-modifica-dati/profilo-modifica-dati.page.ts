@@ -9,9 +9,11 @@ import {ActivatedRoute, NavigationExtras, Router} from '@angular/router';
   templateUrl: './profilo-modifica-dati.page.html',
   styleUrls: ['./profilo-modifica-dati.page.scss'],
 })
-export class ProfiloModificaDatiPage implements OnInit {
 
+export class ProfiloModificaDatiPage implements OnInit {
+  
   public currentUser: any=null;
+  public mess:String;
 
 
   constructor(
@@ -21,12 +23,17 @@ export class ProfiloModificaDatiPage implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router) {}
 
+
+
   ngOnInit() {
     this.currentUser=JSON.parse(localStorage.getItem('utente'));
   }
 
+  ngDoCheck(){
+    this.currentUser=JSON.parse(localStorage.getItem('utente'));
+  }
 
-
+  
   //SUBMIT METOD
   ionModificaDatiProfilo(value){
 
@@ -87,9 +94,25 @@ async alertMex(forTask) {
   await alert.present();
 }
 
+ //FUNCTION NAVIGATION
+ goToHome(){
+  this.navCtrl.navigateRoot(['/home']);
+}
 
 goToProfilo(){
-  this.navCtrl.navigateForward(['/profilo-anagrafica']);
+  this.navCtrl.navigateRoot(['/profilo-anagrafica']);
+}
+
+goToAttivita(){
+  this.navCtrl.navigateRoot(['/attivita-new-offerte']);
+}
+
+goToRicerca(){
+  this.navCtrl.navigateRoot(['/ricerca-attivita-offerte']);
+}
+
+goToBack(){
+  this.navCtrl.navigateBack(['/profilo-anagrafica']);
 }
 
 }

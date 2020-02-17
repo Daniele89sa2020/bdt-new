@@ -64,7 +64,13 @@ export class ApiService {
     return this.http.post('http://localhost/bdt-server/modificaDatiUtente.php',JSON.stringify(value));
   }
 
- 
+  ricercaAttivitaOfferte(value){
+    return this.http.post('http://localhost/bdt-server/ricercaAttivitaOfferte.php',JSON.stringify(value));
+  }
+
+  ricercaAttivitaRichieste(value){
+    return this.http.post('http://localhost/bdt-server/ricercaAttivitaRichieste.php',JSON.stringify(value));
+  }
 
 /*
  

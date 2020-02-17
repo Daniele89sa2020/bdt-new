@@ -26,8 +26,14 @@ export class AttivitaNewCreaPage implements OnInit {
 
   ngOnInit() {
     this.currentUser=JSON.parse(localStorage.getItem('utente'));
+  }  
+  
+  ngDoCheck(){
+    this.currentUser=JSON.parse(localStorage.getItem('utente'));
   }
 
+
+  //SETTING INPUT HIDDEN ATTRAVERSO BUTTON
   selectType(s){
     (<HTMLInputElement>document.getElementById('tipo')).value=s;
   }
@@ -56,7 +62,7 @@ export class AttivitaNewCreaPage implements OnInit {
   }
 
 
-  //ALERT
+//ALERT
 async alertMex(forTask) {
   const alert = await this.alertCtrl.create({
       header: forTask.header,
@@ -64,6 +70,23 @@ async alertMex(forTask) {
       buttons: [{text: 'ok',},]
   });
   await alert.present();
+}
+
+//FUNCTION NAVIGATION
+goToHome(){
+  this.navCtrl.navigateRoot(['/home']);
+}
+
+goToProfilo(){
+  this.navCtrl.navigateRoot(['/profilo-anagrafica']);
+}
+
+goToAttivita(){
+  this.navCtrl.navigateRoot(['/attivita-new-offerte']);
+}
+
+goToRicerca(){
+  this.navCtrl.navigateRoot(['/ricerca-attivita-offerte']);
 }
 
 }
