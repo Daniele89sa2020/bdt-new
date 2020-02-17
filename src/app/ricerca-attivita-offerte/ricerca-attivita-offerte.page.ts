@@ -70,6 +70,8 @@ async alertMex(forTask) {
           this.listaAttivita = data['records']; 
     });
   }
+
+  
   candidati(value){
     this.apiService.candidaUtentePerAttivita(JSON.parse(JSON.stringify({id_utente:this.currentUser.id, id_attivita:value}))).subscribe((data)=>{
   

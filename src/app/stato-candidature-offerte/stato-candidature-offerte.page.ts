@@ -31,16 +31,17 @@ export class StatoCandidatureOffertePage implements OnInit {
     }
 
 
+    ngDoCheck(){
+      this.currentUser=JSON.parse(localStorage.getItem('utente'));
+      this.idUtuente = this.currentUser.id;
+      this.caricaElencoCandidati();
+    }
+
     caricaElencoCandidati(){
       this.apiService.visualizzaStatoCandidature(JSON.parse(JSON.stringify({tipo:'o',id_utente:this.idUtuente}))).subscribe((data)=>{
         this.elencoAttivita = data['records'];
         });
     }
-
-
-  ngDoCheck(){
-    this.currentUser=JSON.parse(localStorage.getItem('utente'));
-  }
 
 
 //ALERT

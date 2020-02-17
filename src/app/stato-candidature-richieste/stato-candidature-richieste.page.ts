@@ -30,6 +30,11 @@ export class StatoCandidatureRichiestePage implements OnInit {
       this.caricaElencoCandidati();
     }
 
+    ngDoCheck(){
+      this.currentUser=JSON.parse(localStorage.getItem('utente'));
+      this.idUtuente = this.currentUser.id;
+      this.caricaElencoCandidati();
+    }
 
     caricaElencoCandidati(){
 
@@ -37,10 +42,6 @@ export class StatoCandidatureRichiestePage implements OnInit {
         this.elencoAttivita = data['records'];
         });
     }
-
-  ngDoCheck(){
-    this.currentUser=JSON.parse(localStorage.getItem('utente'));
-  }
 
 
 //ALERT

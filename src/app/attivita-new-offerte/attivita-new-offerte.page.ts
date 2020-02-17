@@ -29,6 +29,12 @@ export class AttivitaNewOffertePage implements OnInit {
       this.currentUser=JSON.parse(localStorage.getItem('utente'));
       this.caricaAttivitaOfferte();
     }
+
+
+    ngDoCheck(){
+      this.currentUser=JSON.parse(localStorage.getItem('utente'));
+      this.caricaAttivitaOfferte();
+    }
   
     caricaAttivitaOfferte(){
 
@@ -47,9 +53,7 @@ export class AttivitaNewOffertePage implements OnInit {
       this.navCtrl.navigateForward(['/elenco-candidati'], navigationExtras);
     }
 
-  ngDoCheck(){
-    this.currentUser=JSON.parse(localStorage.getItem('utente'));
-  }
+
 
 
   //ALERT

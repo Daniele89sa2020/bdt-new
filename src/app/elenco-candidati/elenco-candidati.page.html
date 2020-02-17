@@ -6,6 +6,17 @@
       </ion-button>
     </ion-buttons>
     <ion-title>Elenco Candidati</ion-title>
+    <!-- button chatbot -->
+   <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button color="light">
+      <img src="/assets/chatbot.png" style="height:45px;">
+    </ion-fab-button>
+    <ion-fab-list side="bottom">
+      <ion-fab-button color="primary"><ion-icon name="search"></ion-icon></ion-fab-button>
+      <ion-fab-button color="primary"><ion-icon name="create"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  
   </ion-toolbar>
 </ion-header>
 
@@ -29,7 +40,7 @@
       <div *ngIf="candidato.id_utente==6"><img src="/assets/diletta.jpg" style="height:48px;width:48px;"></div>
    </ion-avatar>
     <ion-label>
-      <b>{{candidato.nome}} </b>
+      <b>{{candidato.nome}} {{candidato.cognome}} </b>
       <p>{{candidato.competenze}}</p>
       
       

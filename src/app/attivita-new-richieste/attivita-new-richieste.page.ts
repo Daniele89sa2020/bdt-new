@@ -29,6 +29,11 @@ export class AttivitaNewRichiestePage implements OnInit {
       this.currentUser=JSON.parse(localStorage.getItem('utente'));
       this.caricaAttivitaRichieste();
     }
+
+    ngDoCheck(){
+      this.currentUser=JSON.parse(localStorage.getItem('utente'));
+      this.caricaAttivitaRichieste();
+    }
   
     caricaAttivitaRichieste(){
 
@@ -49,9 +54,6 @@ export class AttivitaNewRichiestePage implements OnInit {
     }
 
 
-  ngDoCheck(){
-    this.currentUser=JSON.parse(localStorage.getItem('utente'));
-  }
 
 
 //ALERT
