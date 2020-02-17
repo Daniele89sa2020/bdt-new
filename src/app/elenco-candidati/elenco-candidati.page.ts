@@ -43,7 +43,6 @@ export class ElencoCandidatiPage implements OnInit {
     }
     
     accettaCandidato(idCandidatura){
-      alert("sono qua "+idCandidatura);
       this.apiService.cambiaStatoCandidatura(JSON.parse(JSON.stringify({id_candidatura:idCandidatura, stato:'accettato'}))).subscribe((data)=>{
   
               if (data['status']=="no"){     
@@ -97,4 +96,21 @@ export class ElencoCandidatiPage implements OnInit {
       });
       await alert.present();
     }
+
+     //FUNCTION NAVIGATION
+   goToHome(){
+    this.navCtrl.navigateRoot(['/home']);
+  }
+  
+  goToProfilo(){
+    this.navCtrl.navigateRoot(['/profilo-anagrafica']);
+  }
+
+  goToAttivita(){
+    this.navCtrl.navigateRoot(['/attivita-new-offerte']);
+  }
+
+  goToRicerca(){
+    this.navCtrl.navigateRoot(['/ricerca-attivita-offerte']);
+  }
 }

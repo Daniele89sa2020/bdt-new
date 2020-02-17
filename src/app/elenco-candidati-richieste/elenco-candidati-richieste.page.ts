@@ -5,12 +5,12 @@ import { NavController } from '@ionic/angular';
 import {ActivatedRoute, NavigationExtras, Router} from '@angular/router';
 
 @Component({
-  selector: 'app-dettagli-attivita-svolte',
-  templateUrl: './dettagli-attivita-svolte.page.html',
-  styleUrls: ['./dettagli-attivita-svolte.page.scss'],
+  selector: 'app-elenco-candidati-richieste',
+  templateUrl: './elenco-candidati-richieste.page.html',
+  styleUrls: ['./elenco-candidati-richieste.page.scss'],
 })
 
-export class DettagliAttivitaSvoltePage implements OnInit {
+export class ElencoCandidatiRichiestePage implements OnInit {
   
   public currentUser: any=null;
   public mess:String;
@@ -60,5 +60,4 @@ async alertMex(forTask) {
   goToRicerca(){
     this.navCtrl.navigateRoot(['/ricerca-attivita-offerte']);
   }
-  
 }

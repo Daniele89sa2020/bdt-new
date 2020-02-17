@@ -9,10 +9,14 @@ import {ActivatedRoute, NavigationExtras, Router} from '@angular/router';
   templateUrl: './attivita-new-richieste.page.html',
   styleUrls: ['./attivita-new-richieste.page.scss'],
 })
-export class AttivitaNewRichiestePage implements OnInit {
 
+
+
+export class AttivitaNewRichiestePage implements OnInit {
   public currentUser: any=null;
   public attivitaRichieste: any=null;
+  public mess:String;
+
 
   constructor(
     private apiService: ApiService,
@@ -44,5 +48,36 @@ export class AttivitaNewRichiestePage implements OnInit {
       this.navCtrl.navigateForward(['/elenco-candidati'], navigationExtras);
     }
 
+
+  ngDoCheck(){
+    this.currentUser=JSON.parse(localStorage.getItem('utente'));
+  }
+
+
+//ALERT
+async alertMex(forTask) {
+  const alert = await this.alertCtrl.create({
+      header: forTask.header,
+      message: forTask.message,
+      buttons: [{text: 'ok',},]
+  });
+  await alert.present();
+}
+
+   //FUNCTION NAVIGATION
+   goToHome(){
+    this.navCtrl.navigateRoot(['/home']);
+  }
   
+  goToProfilo(){
+    this.navCtrl.navigateRoot(['/profilo-anagrafica']);
+  }
+
+  goToAttivita(){
+    this.navCtrl.navigateRoot(['/attivita-new-offerte']);
+  }
+
+  goToRicerca(){
+    this.navCtrl.navigateRoot(['/ricerca-attivita-offerte']);
+  }
 }

@@ -9,10 +9,14 @@ import {ActivatedRoute, NavigationExtras, Router} from '@angular/router';
   templateUrl: './stato-candidature-offerte.page.html',
   styleUrls: ['./stato-candidature-offerte.page.scss'],
 })
+
 export class StatoCandidatureOffertePage implements OnInit {
+
   public currentUser: any = null;
   public elencoAttivita: any = null;
   public idUtuente;
+  public mess:String;
+
   constructor(
     private apiService: ApiService,
     public alertCtrl: AlertController,
@@ -26,11 +30,44 @@ export class StatoCandidatureOffertePage implements OnInit {
       this.caricaElencoCandidati();
     }
 
-    caricaElencoCandidati(){
 
+    caricaElencoCandidati(){
       this.apiService.visualizzaStatoCandidature(JSON.parse(JSON.stringify({tipo:'o',id_utente:this.idUtuente}))).subscribe((data)=>{
         this.elencoAttivita = data['records'];
         });
     }
 
+
+  ngDoCheck(){
+    this.currentUser=JSON.parse(localStorage.getItem('utente'));
+  }
+
+
+//ALERT
+async alertMex(forTask) {
+  const alert = await this.alertCtrl.create({
+      header: forTask.header,
+      message: forTask.message,
+      buttons: [{text: 'ok',},]
+  });
+  await alert.present();
+}
+
+  //FUNCTION NAVIGATION
+  goToHome(){
+   this.navCtrl.navigateRoot(['/home']);
+ }
+ 
+ goToProfilo(){
+   this.navCtrl.navigateRoot(['/profilo-anagrafica']);
+ }
+ 
+ goToAttivita(){
+   this.navCtrl.navigateRoot(['/attivita-new-offerte']);
+ }
+ 
+ goToRicerca(){
+   this.navCtrl.navigateRoot(['/ricerca-attivita-offerte']);
+ }
+ 
 }

@@ -9,6 +9,7 @@ import {ActivatedRoute, NavigationExtras, Router} from '@angular/router';
   templateUrl: './registrazione.page.html',
   styleUrls: ['./registrazione.page.scss'],
 })
+
 export class RegistrazionePage implements OnInit {
 
   data: Object;
@@ -58,6 +59,5 @@ export class RegistrazionePage implements OnInit {
     });
     await alert.present();
   }
-
 
 }

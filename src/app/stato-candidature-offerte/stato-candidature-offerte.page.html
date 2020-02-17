@@ -32,17 +32,14 @@
    <!--CARD 1--> 
    <ion-card class="welcome-card" *ngFor="let attivita of elencoAttivita">
     <ion-card-header>
-      <ion-card-subtitle> <b>Titolo Attività: Assistenza Informatica</b></ion-card-subtitle>
+      <ion-card-subtitle> <b>Titolo Attività: {{attivita.nome}}</b></ion-card-subtitle>
   
           <ion-item>
-            <ion-avatar slot="start">
-               <img src="/assets/avatar4.png">
-            </ion-avatar>   
-             
+            
             
             <div>
               <b>Luogo:</b> {{attivita.citta}} ({{attivita.provincia}})<br>
-              <b>Data:</b> dal {{attivita.data_inizio}} al {{attivita.data_fine}}<br>
+              <b>Data:</b> dal {{attivita.data_inizio}} <br>al {{attivita.data_fine}}<br>
             </div>
       
           </ion-item>
@@ -62,28 +59,27 @@
 
 </ion-content>
 
-
 <ion-footer>
   <ion-toolbar>
     <ion-tabs>
       <ion-tab-bar slot="bottom" >
-        <ion-tab-button [routerLink]="'/home'">
+        <ion-tab-button (click)="goToHome()">
           <ion-icon name="home"></ion-icon>
           <ion-label>Home</ion-label>
          <!-- <ion-badge>6</ion-badge> -->
         </ion-tab-button>
 
-        <ion-tab-button [routerLink]="'/attivita-new-offerte'">
+        <ion-tab-button (click)="goToAttivita()">
           <ion-icon name="construct"></ion-icon>
           <ion-label>Attività</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button [routerLink]="'/ricerca-attivita'">
+        <ion-tab-button (click)="goToRicerca()">
           <ion-icon name="search"></ion-icon>
           <ion-label>Ricerca</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button [routerLink]="'/profilo-anagrafica'">
+        <ion-tab-button (click)="goToProfilo()">
           <ion-icon name="person"></ion-icon>
           <ion-label>Profilo</ion-label>
         </ion-tab-button>

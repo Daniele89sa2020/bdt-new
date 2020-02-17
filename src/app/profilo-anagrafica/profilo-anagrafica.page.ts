@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Injectable, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { AlertController } from '../../../node_modules/@ionic/angular';
 import { NavController } from '@ionic/angular';
 import {ActivatedRoute, NavigationExtras, Router} from '@angular/router';
 
@@ -7,14 +9,21 @@ import {ActivatedRoute, NavigationExtras, Router} from '@angular/router';
   templateUrl: './profilo-anagrafica.page.html',
   styleUrls: ['./profilo-anagrafica.page.scss'],
 })
-export class ProfiloAnagraficaPage implements OnInit {
 
+export class ProfiloAnagraficaPage implements OnInit {
   
   public currentUser: any=null;
+  public mess:String;
 
-  constructor(public navCtrl: NavController,
-              private activatedRoute: ActivatedRoute,
-              private router: Router) { }
+
+  constructor(
+    private apiService: ApiService,
+    public alertCtrl: AlertController,
+    public navCtrl: NavController,
+    private activatedRoute: ActivatedRoute,
+    private router: Router) {}
+
+
 
   ngOnInit() {
     this.currentUser=JSON.parse(localStorage.getItem('utente'));
@@ -24,6 +33,16 @@ export class ProfiloAnagraficaPage implements OnInit {
     this.currentUser=JSON.parse(localStorage.getItem('utente'));
   }
 
+
+//ALERT
+async alertMex(forTask) {
+  const alert = await this.alertCtrl.create({
+      header: forTask.header,
+      message: forTask.message,
+      buttons: [{text: 'ok',},]
+  });
+  await alert.present();
+}
 
   //FUNCTION NAVIGATION
   goToHome(){

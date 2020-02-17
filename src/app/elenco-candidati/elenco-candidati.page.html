@@ -19,9 +19,15 @@
 
   <!--<ion-item [routerLink]="'/dettagli-ricerca'" *ngFor="let candidato of elencoCandidati">-->
   <ion-item *ngFor="let candidato of elencoCandidati">
+    
     <ion-avatar slot="start">
-        <img src="/assets/avatar10.png">
-    </ion-avatar>
+      <div *ngIf="candidato.id_utente==1"><img src="/assets/avatar4.png" style="height:48px;width:48px;"></div>
+      <div *ngIf="candidato.id_utente==2"><img src="/assets/avatar4.png" style="height:48px;width:48px;"></div>
+      <div *ngIf="candidato.id_utente==3"><img src="/assets/avatar4.png" style="height:48px;width:48px;"></div>
+      <div *ngIf="candidato.id_utente==5"><img src="/assets/giovanni.jpg" style="height:48px;width:48px;"></div>
+      <div *ngIf="candidato.id_utente==4"><img src="/assets/daniele.jpg" style="height:48px;width:48px;"></div>
+      <div *ngIf="candidato.id_utente==6"><img src="/assets/diletta.jpg" style="height:48px;width:48px;"></div>
+   </ion-avatar>
     <ion-label>
       <b>{{candidato.nome}} </b>
       <p>{{candidato.competenze}}</p>
@@ -46,28 +52,27 @@
 
 </ion-content>
 
-  
 <ion-footer>
   <ion-toolbar>
     <ion-tabs>
       <ion-tab-bar slot="bottom" >
-        <ion-tab-button [routerLink]="'/home'">
+        <ion-tab-button (click)="goToHome()">
           <ion-icon name="home"></ion-icon>
           <ion-label>Home</ion-label>
          <!-- <ion-badge>6</ion-badge> -->
         </ion-tab-button>
 
-        <ion-tab-button [routerLink]="'/attivita-new-offerte'">
+        <ion-tab-button (click)="goToAttivita()">
           <ion-icon name="construct"></ion-icon>
           <ion-label>Attività</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button [routerLink]="'/ricerca-attivita'">
+        <ion-tab-button (click)="goToRicerca()">
           <ion-icon name="search"></ion-icon>
           <ion-label>Ricerca</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button [routerLink]="'/profilo-anagrafica'">
+        <ion-tab-button (click)="goToProfilo()">
           <ion-icon name="person"></ion-icon>
           <ion-label>Profilo</ion-label>
         </ion-tab-button>
@@ -76,3 +81,4 @@
     </ion-tabs>
   </ion-toolbar>
 </ion-footer>
+

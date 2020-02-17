@@ -29,30 +29,246 @@
     </p>
   </div>
 
+  <form #form="ngForm" (ngSubmit)="ionRicercaRichieste(form.value)">
+    <ion-grid>
+      <ion-row  justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          
+          <div padding>
+           
+            <ion-item>
+              <ion-label><b>Categoria Attività</b></ion-label>
+                 <ion-select name="categoria" ngModel required>
+                      <ion-select-option value="Avvocato">Avvocato</ion-select-option>
+                      <ion-select-option value="Baby Sitter">Baby Sitter</ion-select-option>
+                      <ion-select-option value="Badante">Badante</ion-select-option>
+                      <ion-select-option value="Commercialista">Commercialista</ion-select-option>
+                      <ion-select-option value="Consulente Informatico">Consulente Informatico</ion-select-option>
+                      <ion-select-option value="Dentista">Dentista</ion-select-option>
+                      <ion-select-option value="Dog Sitters">Dog Sitters</ion-select-option>
+                      <ion-select-option value="Elettricista">Elettricista</ion-select-option>
+                      <ion-select-option value="Idraulico">Idraulico</ion-select-option>
+                      <ion-select-option value="Infermiere">Infermiere</ion-select-option>
+                      <ion-select-option value="Medico">Medico</ion-select-option>
+                  </ion-select>
+          </ion-item>
+          <br><br>
+
+             <ion-item>
+                 <ion-label><b>Provincia</b></ion-label>
+                    <ion-select name="provincia" ngModel required>
+                         <ion-select-option value="AG">Agrigento</ion-select-option>	
+                         <ion-select-option value="AL">Alessandria</ion-select-option>
+                         <ion-select-option value="AN">Ancona</ion-select-option>
+                         <ion-select-option value="AO">Aosta</ion-select-option>
+                         <ion-select-option value="AQ">L'Aquila</ion-select-option>
+                         <ion-select-option value="AR">Arezzo</ion-select-option>
+                         <ion-select-option value="AP">Ascoli-Piceno</ion-select-option>
+                         <ion-select-option value="AT">Asti</ion-select-option>
+                         <ion-select-option value="AV">Avellino</ion-select-option>
+                         <ion-select-option value="BA">Bari</ion-select-option>
+                         <ion-select-option value="BT">Barletta-Andria-Trani</ion-select-option>
+                         <ion-select-option value="BL">Belluno</ion-select-option>
+                         <ion-select-option value="BN">Benevento</ion-select-option>
+                         <ion-select-option value="BG">Bergamo</ion-select-option>
+                         <ion-select-option value="BI">Biella</ion-select-option>
+                         <ion-select-option value="BO">Bologna</ion-select-option>
+                         <ion-select-option value="BZ">Bolzano</ion-select-option>
+                         <ion-select-option value="BS">Brescia</ion-select-option>
+                         <ion-select-option value="BR">Brindisi</ion-select-option>
+                         <ion-select-option value="CA">Cagliari</ion-select-option>
+                         <ion-select-option value="CL">Caltanissetta</ion-select-option>
+                         <ion-select-option value="CB">Campobasso</ion-select-option>
+                         <ion-select-option value="CI">Carbonia Iglesias</ion-select-option>
+                         <ion-select-option value="CE">Caserta</ion-select-option>
+                         <ion-select-option value="CT">Catania</ion-select-option>
+                         <ion-select-option value="CZ">Catanzaro</ion-select-option>
+                         <ion-select-option value="CH">Chieti</ion-select-option>
+                         <ion-select-option value="CO">Como</ion-select-option>
+                         <ion-select-option value="CS">Cosenza</ion-select-option>
+                         <ion-select-option value="CR">Cremona</ion-select-option>
+                         <ion-select-option value="KR">Crotone</ion-select-option>
+                         <ion-select-option value="CN">Cuneo</ion-select-option>
+                         <ion-select-option value="EN">Enna</ion-select-option>
+                         <ion-select-option value="FM">Fermo</ion-select-option>
+                         <ion-select-option value="FE">Ferrara</ion-select-option>
+                         <ion-select-option value="FI">Firenze</ion-select-option>
+                         <ion-select-option value="FG">Foggia</ion-select-option>
+                         <ion-select-option value="FC">Forli-Cesena</ion-select-option>
+                         <ion-select-option value="FR">Frosinone</ion-select-option>
+                         <ion-select-option value="GE">Genova</ion-select-option>
+                         <ion-select-option value="GO">Gorizia</ion-select-option>
+                         <ion-select-option value="GR">Grosseto</ion-select-option>
+                         <ion-select-option value="IM">Imperia</ion-select-option>
+                         <ion-select-option value="IS">Isernia</ion-select-option>
+                         <ion-select-option value="SP">La-Spezia</ion-select-option>
+                         <ion-select-option value="LT">Latina</ion-select-option>
+                         <ion-select-option value="LE">Lecce</ion-select-option>
+                         <ion-select-option value="LC">Lecco</ion-select-option>
+                         <ion-select-option value="LI">Livorno</ion-select-option>
+                         <ion-select-option value="LO">Lodi</ion-select-option>
+                         <ion-select-option value="LU">Lucca</ion-select-option>
+                         <ion-select-option value="MC">Macerata</ion-select-option>
+                         <ion-select-option value="MN">Mantova</ion-select-option>
+                         <ion-select-option value="MS">Massa-Carrara</ion-select-option>
+                         <ion-select-option value="MT">Matera</ion-select-option>
+                         <ion-select-option value="VS">Medio Campidano</ion-select-option>
+                         <ion-select-option value="ME">Messina</ion-select-option>
+                         <ion-select-option value="MI">Milano</ion-select-option>
+                         <ion-select-option value="MO">Modena</ion-select-option>
+                         <ion-select-option value="MB">Monza-Brianza</ion-select-option>
+                         <ion-select-option value="NA">Napoli</ion-select-option>
+                         <ion-select-option value="NO">Novara</ion-select-option>
+                         <ion-select-option value="NU">Nuoro</ion-select-option>
+                         <ion-select-option value="OG">Ogliastra</ion-select-option>
+                         <ion-select-option value="OT">Olbia Tempio</ion-select-option>
+                         <ion-select-option value="OR">Oristano</ion-select-option>
+                         <ion-select-option value="PD">Padova</ion-select-option>
+                         <ion-select-option value="PA">Palermo</ion-select-option>
+                         <ion-select-option value="PR">Parma</ion-select-option>
+                         <ion-select-option value="PV">Pavia</ion-select-option>
+                         <ion-select-option value="PG">Perugia</ion-select-option>
+                         <ion-select-option value="PU">Pesaro-Urbino</ion-select-option>
+                         <ion-select-option value="PE">Pescara</ion-select-option>
+                         <ion-select-option value="PC">Piacenza</ion-select-option>
+                         <ion-select-option value="PI">Pisa</ion-select-option>
+                         <ion-select-option value="PT">Pistoia</ion-select-option>
+                         <ion-select-option value="PN">Pordenone</ion-select-option>
+                         <ion-select-option value="PZ">Potenza</ion-select-option>
+                         <ion-select-option value="PO">Prato</ion-select-option>
+                         <ion-select-option value="RG">Ragusa</ion-select-option>
+                         <ion-select-option value="RA">Ravenna</ion-select-option>
+                         <ion-select-option value="RC">Reggio-Calabria</ion-select-option>
+                         <ion-select-option value="RE">Reggio-Emilia</ion-select-option>
+                         <ion-select-option value="RI">Rieti</ion-select-option>
+                         <ion-select-option value="RN">Rimini</ion-select-option>
+                         <ion-select-option value="Roma">Roma</ion-select-option>
+                         <ion-select-option value="RO">Rovigo</ion-select-option>
+                         <ion-select-option value="SA">Salerno</ion-select-option>
+                         <ion-select-option value="SS">Sassari</ion-select-option>
+                         <ion-select-option value="SV">Savona</ion-select-option>
+                         <ion-select-option value="SI">Siena</ion-select-option>
+                         <ion-select-option value="SR">Siracusa</ion-select-option>
+                         <ion-select-option value="SO">Sondrio</ion-select-option>
+                         <ion-select-option value="TA">Taranto</ion-select-option>
+                         <ion-select-option value="TE">Teramo</ion-select-option>
+                         <ion-select-option value="TR">Terni</ion-select-option>
+                         <ion-select-option value="TO">Torino</ion-select-option>
+                         <ion-select-option value="TP">Trapani</ion-select-option>
+                         <ion-select-option value="TN">Trento</ion-select-option>
+                         <ion-select-option value="TV">Treviso</ion-select-option>
+                         <ion-select-option value="TS">Trieste</ion-select-option>
+                         <ion-select-option value="UD">Udine</ion-select-option>
+                         <ion-select-option value="VA">Varese</ion-select-option>
+                         <ion-select-option value="VE">Venezia</ion-select-option>
+                         <ion-select-option value="VB">Verbania</ion-select-option>
+                         <ion-select-option value="VC">Vercelli</ion-select-option>
+                         <ion-select-option value="VR">Verona</ion-select-option>
+                         <ion-select-option value="VV">Vibo-Valentia</ion-select-option>
+                         <ion-select-option value="VI">Vicenza</ion-select-option>
+                         <ion-select-option value="VT">Viterbo</ion-select-option>
+                     </ion-select>
+             </ion-item>
+             <br><br>
+
+            <ion-button  size="default" type="submit" expand="block">Ricerca</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+
+
+  <ion-list-header class="header">
+    <ion-label>Lista Attività</ion-label>
+  </ion-list-header>
+
+<!--
+  <ion-item *ngFor="let attivita of listaAttivita">
+    <ion-avatar slot="start">
+        <img src="/assets/avatar.png">
+    </ion-avatar>
+    <ion-label>
+     <b>Nome Attività: {{attivita.nome}}</b>
+     <p><b>Descrizione:</b> {{attivita.descrizione}}</p>
+     <p><b>Prezzo:</b> {{attivita.prezzo}}</p>
+     <p><b>Data Inizio:</b> {{attivita.data_inizio}}</p>
+     <p><b>Data Fine:</b> {{attivita.data_fine}}</p>
+    </ion-label>
+  </ion-item>-->
+
+  <!--CARD 1--> 
+<ion-card class="welcome-card" *ngFor="let attivita of listaAttivita">
+  <div *ngIf="attivita.attiva == 'si'">
+  <ion-card-header>
+    <ion-card-subtitle> <b>Titolo Attività: {{attivita.nome}}</b></ion-card-subtitle>
+
+        <ion-item>
+          <ion-avatar slot="start">
+            <div *ngIf="attivita.id_utente==1"><img src="/assets/avatar4.png" style="height:48px;width:48px;"></div>
+            <div *ngIf="attivita.id_utente==2"><img src="/assets/avatar4.png" style="height:48px;width:48px;"></div>
+            <div *ngIf="attivita.id_utente==3"><img src="/assets/avatar4.png" style="height:48px;width:48px;"></div>
+            <div *ngIf="attivita.id_utente==5"><img src="/assets/giovanni.jpg" style="height:48px;width:48px;"></div>
+            <div *ngIf="attivita.id_utente==4"><img src="/assets/daniele.jpg" style="height:48px;width:48px;"></div>
+            <div *ngIf="attivita.id_utente==6"><img src="/assets/diletta.jpg" style="height:48px;width:48px;"></div>
+         </ion-avatar>    
+           
+          
+          <div>
+            <b>Luogo:</b> {{attivita.citta}} ({{attivita.provincia}})<br>
+            <b>Data:</b> dal {{attivita.data_inizio}} al {{attivita.data_fine}}<br>
+          </div>
+    
+        </ion-item>
+
+        <ion-item>
+          <div>
+            <b>Descrizione:</b> {{attivita.descrizione}}<br>
+          </div>
+    
+        </ion-item>
+  </ion-card-header>
+  
+  <ion-card-content>
+      <ion-card-title>Costo: {{attivita.prezzo / 60}}h</ion-card-title>
+      
+    <ion-item>
+      <ion-button (click)="candidati(attivita.id)">
+        Cadidati
+      </ion-button>
+      
+      <ion-button>
+        Info
+      </ion-button>
+    </ion-item>
+  </ion-card-content>
+</div>
+</ion-card>
+
 </ion-content>
 
-  
 <ion-footer>
   <ion-toolbar>
     <ion-tabs>
       <ion-tab-bar slot="bottom" >
-        <ion-tab-button [routerLink]="'/home'">
+        <ion-tab-button (click)="goToHome()">
           <ion-icon name="home"></ion-icon>
           <ion-label>Home</ion-label>
          <!-- <ion-badge>6</ion-badge> -->
         </ion-tab-button>
 
-        <ion-tab-button [routerLink]="'/attivita-new-offerte'">
+        <ion-tab-button (click)="goToAttivita()">
           <ion-icon name="construct"></ion-icon>
           <ion-label>Attività</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button [routerLink]="'/ricerca-attivita'">
+        <ion-tab-button (click)="goToRicerca()">
           <ion-icon name="search"></ion-icon>
           <ion-label>Ricerca</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button [routerLink]="'/profilo-anagrafica'">
+        <ion-tab-button (click)="goToProfilo()">
           <ion-icon name="person"></ion-icon>
           <ion-label>Profilo</ion-label>
         </ion-tab-button>
